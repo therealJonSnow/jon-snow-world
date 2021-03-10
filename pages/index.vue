@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import pageQuery from '~/apollo/queries/page'
+// import pageQuery from '~/apollo/queries/page'
 import Banner from '../components/banner.vue'
 
 export default {
@@ -43,12 +43,12 @@ export default {
         }
     },
 
-    apollo: {
-        page: {
-            prefetch: true,
-            query: pageQuery
-        }
-    },
+    // apollo: {
+    //     page: {
+    //         prefetch: true,
+    //         query: pageQuery
+    //     }
+    // },
     
     methods: {
         closeModal: function(event) {

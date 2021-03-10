@@ -1,7 +1,7 @@
 <template>
     <div class="page">
 
-        <Profile v-parallax="0.1" :top="'0'" :left="'0'" :image="page.Profile.Photo.url" :width="'7rem'" :center="'150px'" :color="'var(--primary)'"></Profile>
+        <!-- <Profile v-parallax="0.1" :top="'0'" :left="'0'" :image="page.Profile.Photo.url" :width="'7rem'" :center="'150px'" :color="'var(--primary)'"></Profile> -->
         
         <absolute v-parallax="0.4" :top="'906px'" :left="'120%'">
             <Tri :scale="'(0.1)'" :top="'0'" :left="'0'" :width="'2rem'" :center="'2rem'" :color="'var(--secondary)'"></Tri>
@@ -19,8 +19,8 @@
           
             <h4 class="contianer__header--indent">a <span class="span-highlight">brief guide </span>to</h4>              
             <Subtitle :color="'transparent'">Jonny_Snow</Subtitle>
-            <p class="container__text">Hi there! I'm Jonny, a <span class="span-highlight">Front-end Web Developer</span> and creative based out of Winchester, Hampshire.
-                I am currently working with <span class="span-highlight">Studio Republic</span>, a creative agency for good, making the internet shake its jazz hands. <br/>
+            <p class="container__text">Hi there! I'm Jonny, a <span class="span-highlight">Creative Front-end Developer</span> and creative based out of Winchester, Hampshire.
+                I am currently working with <span class="span-highlight">PopComms</span>, a creative agency, sales tools shake their jazz hands. <br/>
             </p>
             <p class="container__text">
                 In my spare time I like making <span class="span-highlight">things.</span> Creating or developing my skills to bring ideas to life. Adding those extra touches that make peoples heads turn and take notice. 
@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import pageQuery from '~/apollo/queries/page'
+// import pageQuery from '~/apollo/queries/page'
 
 import Absolute from '../components/absolute.vue'
 import Banner from '../components/banner.vue'
@@ -137,7 +137,7 @@ export default {
 
     data: function () {
         return {
-            page: [],
+            // page: [],
             profile: '',
             title: 'All about me'
         }
@@ -149,12 +149,12 @@ export default {
         }
     },
 
-    apollo: {
-        page: {
-            prefetch: true,
-            query: pageQuery
-        }
-    },
+    // apollo: {
+    //     page: {
+    //         prefetch: true,
+    //         query: pageQuery
+    //     }
+    // },
 
     methods: {
 

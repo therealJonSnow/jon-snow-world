@@ -25,10 +25,10 @@
                 <Rectangle class="" :top="'-3'" :left="'-3em'" :width="'80%'" :height="'100%'" :color="'var(--primary)'" :middle="true"></Rectangle>
                 <Subtitle :margin="true" :color="'var(--secondary)'">Things_Finalfinal_1/*</Subtitle>
                 <div class="container__row ">
-                    <div v-for="image in page.GalleryList.GalleryItem" @click="triggerModal" class="container__row__item">
+                    <!-- <div v-for="image in page.GalleryList.GalleryItem" @click="triggerModal" class="container__row__item">
                         <img :src="image.Image.url" :alt="image.Title">
                         <button class="container__button container__button--small">view</button> 
-                    </div>
+                    </div> -->
                 </div>
         </div>
 
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import pageQuery from '~/apollo/queries/page'
+// import pageQuery from '~/apollo/queries/page'
 
 import Absolute from '../components/absolute.vue'
 import Banner from '../components/banner.vue'
@@ -92,12 +92,12 @@ export default {
         }
     },
 
-    apollo: {
-        page: {
-            prefetch: true,
-            query: pageQuery
-        }
-    },
+    // apollo: {
+    //     page: {
+    //         prefetch: true,
+    //         query: pageQuery
+    //     }
+    // },
 
     methods: {
         triggerModal: function(event) {

@@ -58,7 +58,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/apollo',
+    // '@nuxtjs/apollo',
     '@nuxtjs/style-resources',
     ['nuxt-fontawesome', {
       component: 'fa',
