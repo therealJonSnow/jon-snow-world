@@ -1,22 +1,27 @@
 <template>
-    <div>
-        <div  class="banner__container--main">
-            <div class="rect rect--block"></div>
-            <div class="rect rect--outline"></div>
-            <h1 class="title"><slot name="title"/></h1>
-        </div>
-
-        <div v-show="things" class="banner__container banner__container--sub">
-            <h3>
-                <slot name="subtitle-top"/><br/> 
-                <span class="span-highlight">THING<span v-show="showS">S</span><span v-show="fullStop">.</span>
-                </span>
-                <br/>
-                <slot name="subtitle-btm"/><br/> 
-            </h3>
-        </div>      
+  <div>
+    <div class="banner__container--main">
+      <div class="rect-container">
+        <div class="rect rect--block" />
+        <div class="rect rect--outline" />
+      </div>
+      <h1 class="title">
+        <slot name="title" />
+      </h1>
     </div>
+  </div>
 </template>
+
+<script>
+/* jshint esversion: 6 */
+export default {
+  name: 'Banner',
+
+  props: {
+  }
+
+}
+</script>
 
 <style lang="scss">
 .banner {
@@ -33,7 +38,7 @@
     .banner__container {
         position: relative;
     }
-    
+
     h1{
         font-size: 6.125em;
         font-weight: 400;
@@ -64,23 +69,30 @@
         }
     }
 
-    .rect {
+    .rect-container {
+      margin-right: 3rem;
+      position: relative;
+      height: 100%;
+
+      .rect {
+        border-radius: 20px;
         box-sizing: border-box;
-        height: 6.25em;
+        height: 6.25rem;
         position: absolute;
-        width: 1.9em;
+        width: 3rem;
 
         &--outline {
-            border: 2px solid $outline;
-            left: -0.6em;
-            top: 4.4em;
+          border: 2px solid $outline;
+          left: -0.6rem;
+          top: -0.8rem;
         }
 
         &--block {
-            background-color: var(--secondary);
-            left: -1.2em;
-            top: 4.9em;
+          background-color: var(--secondary);
+          left: 0;
+          top: 0.5rem;
         }
+      }
     }
 
     .highlight {
@@ -101,22 +113,7 @@
             left: 11.5em;
             top: 7.45em;
             width: 28em;
-        }     
+        }
     }
 }
 </style>
-
-<script>
-/*jshint esversion: 6 */
-export default {
-    name: 'banner',
-
-    props: {
-        fullStop: Boolean,
-        showS: Boolean,
-        things: { default: true, type: Boolean }, 
-        yellow: Boolean,
-    },
-
-}
-</script>

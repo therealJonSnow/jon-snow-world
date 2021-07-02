@@ -43,7 +43,7 @@ export default {
   ],
 
   serverMiddleware: [
-    '~/api/contact'
+    // '~/api/contact'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -58,7 +58,6 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // '@nuxtjs/apollo',
     '@nuxtjs/style-resources',
     ['nuxt-fontawesome', {
       component: 'fa',
