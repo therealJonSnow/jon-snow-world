@@ -6,7 +6,8 @@
           Hi_I'm_<span class="span-highlight">Jonny.</span>
         </template>
         <template slot="subtitle-top">
-          A front-end web developer who likes making
+          <!-- A front-end web developer who likes making -->
+          SITE UNDER CONSTRUCTION
         </template>
       </Banner>
     </div>

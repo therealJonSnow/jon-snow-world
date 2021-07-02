@@ -9,6 +9,11 @@
         <slot name="title" />
       </h1>
     </div>
+    <div v-show="things" class="banner__container banner__container--sub">
+      <h3>
+        <slot name="subtitle-top"/>
+      </h3>
+    </div>
   </div>
 </template>
 
