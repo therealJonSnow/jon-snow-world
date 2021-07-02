@@ -25,6 +25,10 @@
                 <Rectangle class="" :top="'-3'" :left="'-3em'" :width="'80%'" :height="'100%'" :color="'var(--primary)'" :middle="true"></Rectangle>
                 <Subtitle :margin="true" :color="'var(--secondary)'">Things_Finalfinal_1/*</Subtitle>
                 <div class="container__row ">
+                    <div class="container__row__item">
+                        <a href="https://galaxy-maker.netlify.app">Galaxy Maker</a>
+                        <a href="https://3d-avo.netlify.app">3D Hotspots</a>
+                    </div>
                     <!-- <div v-for="image in page.GalleryList.GalleryItem" @click="triggerModal" class="container__row__item">
                         <img :src="image.Image.url" :alt="image.Title">
                         <button class="container__button container__button--small">view</button> 
