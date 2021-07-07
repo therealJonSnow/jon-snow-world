@@ -55,7 +55,7 @@
     left: -31px;
     position: absolute;
     width: 1.2rem;
-    top: 0.6rem;
+    top: 0.7rem;
 }
 
 .bullets__item--slot:after {
@@ -65,7 +65,7 @@
     height: 1.2rem;
     position: absolute;
     left: -28px;
-    top: 0.35rem;
+    top: 0.45rem;
     width: 1.2rem;
 }
 

@@ -1,24 +1,20 @@
 <template>
   <div class="page">
-    <PhotoModal :close-modal="modalVisible = false" :modal-src="modalSrc" :modal-visible="modalVisible" />
-
     <div v-parallax="0" class="banner">
       <Banner :dot="false" :show-s="true">
         <template slot="title">
-          <span class="span-highlight">blog /n bits</span>
+          <span class="span-highlight">bits </span> /n <span class="span-highlight">blogs </span>
         </template>
       </Banner>
     </div>
 
-    <div v-parallax="0" class="container container--mt">
-      <Subtitle :margin="true" :color="'var(--secondary)'">
-        Things_Finalfinal_1/*
-      </Subtitle>
-      <div class="container__row ">
-        <div class="container__row__item">
-          <a href="https://galaxy-maker.netlify.app">Galaxy Maker</a>
-          <a href="https://3d-avo.netlify.app">3D Hotspots</a>
-        </div>
+    <div class="container container--mt">
+      <div class="blog-grid">
+        <Card
+          v-for="(post, index) in posts"
+          :key="index"
+          :post="post"
+        />
       </div>
     </div>
 
@@ -34,31 +30,23 @@
 
 <script>
 
-import Absolute from '../components/absolute.vue'
 import Banner from '../components/banner.vue'
 import Contact from '../components/contact.vue'
-import Circ from '../components/circ.vue'
-import PhotoModal from '../components/photoModal.vue'
 import Social from '../components/social.vue'
-import Subtitle from '../components/subtitle.vue'
-import Tri from '../components/tri.vue'
+import Card from '../components/card.vue'
 
 export default {
-  name: 'Gallery',
+  name: 'Blog',
   components: {
-    Absolute,
     Banner,
     Contact,
-    Circ,
-    PhotoModal,
     Social,
-    Subtitle,
-    Tri
+    Card
   },
   props: {
   },
   async asyncData ({ $axios }) {
-    const posts = await $axios.$get('http://localhost:1337/posts')
+    const posts = await $axios.$get('https://jon-snow-world-backend.herokuapp.com/posts')
     return { posts }
   },
   data () {
@@ -66,7 +54,7 @@ export default {
       modalSrc: '',
       modalVisible: false,
       page: [],
-      title: 'Gallery of art and animation'
+      title: 'Blogs n Bits'
     }
   },
   mounted () {
@@ -88,3 +76,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5.5rem 3.5rem;
+  width: 100%;
+}
+</style>

@@ -9,7 +9,7 @@
         <slot name="title" />
       </h1>
     </div>
-    <div v-show="things" class="banner__container banner__container--sub">
+    <div class="banner__container banner__container--sub">
       <h3>
         <slot name="subtitle-top"/>
       </h3>
@@ -32,8 +32,8 @@ export default {
 .banner {
     display: inline-block;
     font-size: 1rem;
-    margin-bottom: 0vh;
-    margin-top: 8vh;
+    margin-bottom: 5vh;
+    margin-top: 20vh;
     position: relative;
 
     @media (max-width: 400px) {
@@ -47,7 +47,7 @@ export default {
     h1{
         font-size: 6.125em;
         font-weight: 400;
-        padding-left: 2rem;
+        padding-left: 4rem;
 
         @media (max-width: 400px) {
             font-size: 6em;
@@ -88,14 +88,14 @@ export default {
 
         &--outline {
           border: 2px solid $outline;
-          left: -0.6rem;
-          top: -0.8rem;
+          left: -0.5rem;
+          top: -0.4rem;
         }
 
         &--block {
           background-color: var(--secondary);
           left: 0;
-          top: 0.5rem;
+          top: 0.4rem;
         }
       }
     }

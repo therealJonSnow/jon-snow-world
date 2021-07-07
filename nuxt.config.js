@@ -39,7 +39,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/global'
+    {
+      src: '~plugins/global', ssr: true
+    }
   ],
 
   serverMiddleware: [

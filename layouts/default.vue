@@ -1,8 +1,8 @@
 <template>
   <div class="main-container">
     <nuxt />
-    <Themes></Themes>
-    <NavMenu></NavMenu>
+    <Themes />
+    <NavMenu />
   </div>
 </template>
 
@@ -15,9 +15,10 @@
 }
 
 .main-container {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
-    min-width: 100vw;
+    // width: 100vw;
     overflow-x: hidden;
     position: relative;
     text-align: center;
@@ -37,15 +38,15 @@ export default {
     Themes
   },
 
-    mounted() {
-        console.log(
-            "+-+-+-+-+-+-+-+ +-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+\n" +
-            "|L|o|o|k|i|n|g| |f|o|r| |a| |d|e|v|e|l|o|p|e|r|:|\n" +
-            "+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n" +
-            "|W|h|y| |n|o|t| |c|o|n|t|a|c|t| |m|e|?|\n" +      
-            "+-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+\n"     
-        )
-    }
+  mounted () {
+    console.log(
+      '+-+-+-+-+-+-+-+ +-+-+-+ +-+ +-+-+-+-+-+-+-+-+-+-+\n' +
+            '|L|o|o|k|i|n|g| |f|o|r| |a| |d|e|v|e|l|o|p|e|r|:|\n' +
+            '+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n' +
+            '|W|h|y| |n|o|t| |c|o|n|t|a|c|t| |m|e|?|\n' +
+            '+-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+\n'
+    )
+  }
 }
 
 </script>

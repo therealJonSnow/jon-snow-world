@@ -12,29 +12,25 @@
     </absolute>
 
     <div v-parallax="0" class="banner">
-      <Banner :dot="false" :show-s="false">
+      <Banner :dot="true" :show-s="true" :full-stop="true">
         <template slot="title">
           <span class="span-highlight">About_Me</span>
         </template>
         <template slot="subtitle-top">
-          Every
-        </template>
-        <template slot="subtitle-btm">
-          about me.
+          <!-- A brief guide -->
         </template>
       </Banner>
     </div>
 
     <div class="container container--mt">
-      <h4 class="contianer__header--indent">
-        a <span class="span-highlight">brief guide </span>to
+      <!-- <h4 class="contianer__header--indent" style="opacity: 0;">
+        he's got a <span class="span-highlight">name</span>
       </h4>
       <Subtitle :color="'transparent'">
         Jonny_Snow
-      </Subtitle>
+      </Subtitle> -->
       <p class="container__text">
         Hi there! I'm Jonny, a <span class="span-highlight">Creative Front-end Developer</span> and creative based out of Winchester, Hampshire.
-        I am currently working with <span class="span-highlight">PopComms</span>, a creative agency, sales tools shake their jazz hands. <br>
       </p>
       <p class="container__text">
         In my spare time I like making <span class="span-highlight">things.</span> Creating or developing my skills to bring ideas to life. Adding those extra touches that make peoples heads turn and take notice.

@@ -1,40 +1,52 @@
 <template>
+  <div class="container container--contact">
+    <h4 class="contianer__header--indent">
+      questions, ideas or <span class="span-highlight">just want a chat</span>
+    </h4>
+    <Subtitle :color="'transparent'">
+      Get_in_touch
+    </Subtitle>
 
-    <div class="container container--contact">  
-        <h4 class="contianer__header--indent">questions, ideas or <span class="span-highlight">just want a chat</span></h4>              
-        <Subtitle :color="'transparent'">Get_in_touch</Subtitle>
+    <form class="form" method="POST" action="/send" @submit="submitForm">
+      <div class="form__left">
+        <div class="form__group">
+          <label class="form__label" for="name">Name:</label>
+          <input v-model="name" class="form__input" type="text" name="name" placeholder="Name">
+          <transition name="fade">
+            <span v-if="nameError" class="form__error">{{ nameError }}</span>
+          </transition>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="email">Email:</label>
+          <input v-model="email" class="form__input" type="email" name="email" placeholder="Email">
+          <transition name="fade">
+            <span v-if="emailError" class="form__error">{{ emailError }}</span>
+          </transition>
+        </div>
+      </div>
+      <div class="form__right" :class="{ 'form__right--blue': focus }">
+        <div class="form__group form__group--height">
+          <label class="form__label" for="message">Message:</label>
+          <textarea
+            id="message"
+            v-model="message"
+            class="form__textarea"
+            name="message"
+            placeholder="<!--Insert awesome idea here -->"
+            @focus="focusToggle"
+            @blur="focusToggle"
+          />
+          <transition name="fade">
+            <span v-if="messageError" class="form__error">{{ messageError }}</span>
+          </transition>
+        </div>
+      </div>
 
-        <form @submit="submitForm" class="form" method="POST" action="/send">
-        	<div class="form__left">
-        		<div class="form__group">
-		            <label class="form__label" for="name">Name:</label>
-		            <input v-model="name" class="form__input" type="text" name="name" placeholder="Name">
-		            <transition name="fade">
-		            	<span v-if="nameError" class="form__error">{{ nameError }}</span>
-		            </transition>
-        		</div>
-        		<div class="form__group">
-		            <label class="form__label" for="email">Email:</label>
-		            <input v-model="email" class="form__input" type="email" name="email" placeholder="Email">
-		            <transition name="fade">
-		            	<span v-if="emailError" class="form__error">{{ emailError }}</span>
-		            </transition>
-	            </div>
-        	</div>
-        	<div class="form__right" :class="{ 'form__right--blue': focus }">
-        		<div class="form__group form__group--height">
-	        		<label class="form__label" for="message">Message:</label>
-	        		<textarea v-model="message" @focus="focusToggle" @blur="focusToggle" class="form__textarea" name="message" id="message" placeholder="<!--Insert awesome idea here -->"></textarea>
-		            <transition name="fade">
-		            	<span v-if="messageError" class="form__error">{{ messageError }}</span>
-		            </transition>
-	        	</div>
-	        </div>
-
-            <button type="submit" class="container__button">Submit</button>                          
-        </form>
-    </div>
-
+      <button type="submit" class="container__button">
+        Submit
+      </button>
+    </form>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -181,97 +193,97 @@
 <script>
 import axios from 'axios'
 import Subtitle from './subtitle'
-/*jshint esversion: 6 */
+/* jshint esversion: 6 */
 export default {
-	name: 'contact',
+  name: 'Contact',
 
-	components: {
-		Subtitle
-	},
+  components: {
+    Subtitle
+  },
 
-	props: {
+  props: {
 
-	},
+  },
 
-	data: function () {
-		return {
-			focus: false,
-			name: '',
-			nameError: '',
-			email: '',
-			emailError: '',
-			message: '',
-			messageError: '',
-			errors: [],
-			success: false,
-		}
-	},
+  data () {
+    return {
+      focus: false,
+      name: '',
+      nameError: '',
+      email: '',
+      emailError: '',
+      message: '',
+      messageError: '',
+      errors: [],
+      success: false
+    }
+  },
 
-	methods: {
-		focusToggle: function() {
-			if(this.focus === true) {
-				this.focus = false;
-			} else {
-				this.focus = true;
-			}
-		},
-		validateForm() {
-            this.success = false
-            this.errors = []
-            if (!this.name) {
-                this.nameError = 'Please add your name.';
-                this.errors.push('name');
-            }
-            if (!this.email) {
-            	this.emailError = 'Add your email so I can contact you!';
-            	this.errors.push('email');
-            } else if (!this.validEmail(this.email)) {
-            	this.emailError = 'I don\'t think this is a real email...';
-            	this.errors.push('email');
-            }
-            if (!this.message) {
-            	this.messageError = 'What\'s your cool idea?'
-            	this.errors.push('message');
-            }
-        },
+  computed: {
 
-        validEmail(email) {
-            var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
-            return reg.test(email)
-        },
+  },
 
-		submitForm(e) {
-			e.preventDefault();
-
-			this.validEmail();
-			this.validateForm();
-
-            var vm = this;
-
-			if (this.errors.length == 0) {
-				return  axios.post('/api/contact', {
-	                'name': this.name,
-	                'email': this.email,
-	                'message': this.message
-	            }).then(function (response) {
-                    vm.$router.push({
-                        path: '/sent'
-                    })
-	            }).catch (error => {
-	                var errors = error.response.data.errors
-	            }); 
-			} else {
-				console.log(this.errors);
-				console.log('no');
-			}
-
-        }
-		
-	},
-
-    computed: {
-
+  methods: {
+    focusToggle () {
+      if (this.focus === true) {
+        this.focus = false
+      } else {
+        this.focus = true
+      }
     },
+    validateForm () {
+      this.success = false
+      this.errors = []
+      if (!this.name) {
+        this.nameError = 'Please add your name.'
+        this.errors.push('name')
+      }
+      if (!this.email) {
+        this.emailError = 'Add your email so I can contact you!'
+        this.errors.push('email')
+      } else if (!this.validEmail(this.email)) {
+        this.emailError = 'I don\'t think this is a real email...'
+        this.errors.push('email')
+      }
+      if (!this.message) {
+        this.messageError = 'What\'s your cool idea?'
+        this.errors.push('message')
+      }
+    },
+
+    validEmail (email) {
+      const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
+      return reg.test(email)
+    },
+
+    submitForm (e) {
+      e.preventDefault()
+
+      this.validEmail()
+      this.validateForm()
+
+      const vm = this
+
+      if (this.errors.length === 0) {
+        return axios.post('/api/contact', {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        }).then(function (response) {
+          vm.$router.push({
+            path: '/sent'
+          })
+        }).catch((error) => {
+          this.errors = error.response.data.errors
+        })
+      }
+      // else {
+      //   console.log(this.errors)
+      //   console.log('no')
+      // }
+    }
+
+  }
 
 }
 </script>

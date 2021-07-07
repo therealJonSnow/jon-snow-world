@@ -6,8 +6,8 @@
           Hi_I'm_<span class="span-highlight">Jonny.</span>
         </template>
         <template slot="subtitle-top">
-          <!-- A front-end web developer who likes making -->
-          SITE UNDER CONSTRUCTION
+          A front-end web developer who likes making
+          <!-- SITE UNDER CONSTRUCTION -->
         </template>
       </Banner>
     </div>
@@ -59,3 +59,13 @@ export default {
 }
 
 </script>
+
+<style lang="scss" scoped>
+.banner {
+  margin-top: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+</style>
