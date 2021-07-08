@@ -1,6 +1,6 @@
 
 export default {
-  mode: 'universal',
+  target: 'static',
 
   generate: {
     fallback: true
