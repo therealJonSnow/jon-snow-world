@@ -21,7 +21,6 @@
     // width: 100vw;
     overflow-x: hidden;
     position: relative;
-    text-align: center;
 }
 </style>
 

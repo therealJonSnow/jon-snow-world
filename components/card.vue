@@ -1,11 +1,11 @@
 <template>
-  <div class="card">
+  <nuxt-link class="block" :to="`/blog/${ post.id }`">
     <div class="card__title">
-      <span v-if="post.categories[0]" class="card__category">{ {{ post.categories[0].Name }} }</span>
-      {{ post.Title }}
+      <span v-if="post.category" class="card__category">{ {{ post.category.Name }} }</span>
+      {{ post.title }}
     </div>
-    <div class="card__content" v-html="$md.render(post.Content)" />
-  </div>
+    <div class="card__content" v-html="$md.render(post.description)" />
+  </nuxt-link>
 </template>
 
 <script>

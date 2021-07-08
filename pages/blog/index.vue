@@ -1,7 +1,7 @@
 <template>
-  <div class="page">
+  <div v-if="posts.length > 0" class="page">
     <div v-parallax="0" class="banner">
-      <Banner :dot="false" :show-s="true">
+      <Banner>
         <template slot="title">
           <span class="span-highlight">bits </span> /n <span class="span-highlight">blogs </span>
         </template>
@@ -30,10 +30,10 @@
 
 <script>
 
-import Banner from '../components/banner.vue'
-import Contact from '../components/contact.vue'
-import Social from '../components/social.vue'
-import Card from '../components/card.vue'
+import Banner from '../../components/banner.vue'
+import Contact from '../../components/contact.vue'
+import Social from '../../components/social.vue'
+import Card from '../../components/card.vue'
 
 export default {
   name: 'Blog',
@@ -60,6 +60,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this.posts)
   },
   methods: {
     triggerModal (event) {

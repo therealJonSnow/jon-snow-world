@@ -1,13 +1,13 @@
 <template>
   <div class="page">
     <div class="banner">
-      <Banner :dot="true" :show-s="true" :full-stop="true">
+      <Banner>
         <template slot="title">
           Hi_I'm_<span class="span-highlight">Jonny.</span>
         </template>
         <template slot="subtitle-top">
-          A front-end web developer who likes making
-          <!-- SITE UNDER CONSTRUCTION -->
+          <!-- A front-end web developer who likes making -->
+          SITE UNDER CONSTRUCTION
         </template>
       </Banner>
     </div>

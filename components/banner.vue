@@ -11,7 +11,7 @@
     </div>
     <div class="banner__container banner__container--sub">
       <h3>
-        <slot name="subtitle-top"/>
+        <slot name="subtitle-top" />
       </h3>
     </div>
   </div>
@@ -30,11 +30,11 @@ export default {
 
 <style lang="scss">
 .banner {
-    display: inline-block;
-    font-size: 1rem;
-    margin-bottom: 5vh;
-    margin-top: 20vh;
+    display: block;
+    margin: 25vh auto 15vh;
     position: relative;
+    width: fit-content;
+    max-width: 860px;
 
     @media (max-width: 400px) {
         font-size: 0.8rem;
@@ -64,7 +64,7 @@ export default {
         font-weight: 300;
         line-height: 1.2;
 
-        &> span {
+        & > span {
             font-family: $fontPrimary;
             font-size: 3.125em;
 
@@ -98,27 +98,6 @@ export default {
           top: 0.4rem;
         }
       }
-    }
-
-    .highlight {
-        box-sizing: border-box;
-        height: 5.25em;
-        left: 25em;
-        position: absolute;
-        top: 12em;
-        width: 25em;
-        z-index: -1;
-
-        &--blue {
-            background-color: var(--primary);
-        }
-
-        &--two {
-            height: 5.2em;
-            left: 11.5em;
-            top: 7.45em;
-            width: 28em;
-        }
     }
 }
 </style>

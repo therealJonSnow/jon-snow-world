@@ -15,6 +15,14 @@
     }
 }
 
+a * {
+    cursor: pointer;
+}
+
+.block {
+    display: block;
+}
+
 // CONTAINER
 .container{
     align-items: flex-start;
