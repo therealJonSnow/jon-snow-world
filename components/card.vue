@@ -4,9 +4,7 @@
       <span v-if="post.categories[0]" class="card__category">{ {{ post.categories[0].Name }} }</span>
       {{ post.Title }}
     </div>
-    <div class="card__content">
-      {{ post.Content }}
-    </div>
+    <div class="card__content" v-html="$md.render(post.Content)" />
   </div>
 </template>
 

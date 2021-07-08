@@ -26,11 +26,7 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Poiret+One&display=swap' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
   loading: false,
-  // { color: '#FFCE80', height: '3px', throttle: 0 }
   /*
   ** Global CSS
   */
@@ -46,22 +42,19 @@ export default {
   ],
 
   serverMiddleware: [
-    // '~/api/contact'
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
@@ -78,6 +71,14 @@ export default {
     }]
   ],
 
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
+    html: true
+  },
+
   styleResources: {
     // your settings here
     scss: [
@@ -88,14 +89,6 @@ export default {
   pageTransition: {
     name: 'page',
     mode: 'out-in'
-  },
-
-  apollo: {
-    clientConfigs: {
-      default: {
-        httpEndpoint: process.env.GRAPHQL_URL
-      }
-    }
   },
 
   env: {
@@ -111,11 +104,5 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    // vendor: ['matter-js'],
-    extend (config, ctx) {
-    }
   }
 }
