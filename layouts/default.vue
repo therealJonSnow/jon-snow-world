@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <nuxt keep-alive />
+    <nuxt />
     <Themes />
     <NavMenu />
   </div>

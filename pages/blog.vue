@@ -46,7 +46,9 @@ export default {
   props: {
   },
   async fetch () {
-    this.posts = await this.$axios.$get('https://jon-snow-world-backend.herokuapp.com/posts')
+    this.posts = await fetch(
+      'https://jon-snow-world-backend.herokuapp.com/posts'
+    ).then(res => res.json())
   },
   data () {
     return {
@@ -73,8 +75,7 @@ export default {
     return {
       title: this.title
     }
-  },
-  fetchOnServer: true
+  }
 }
 </script>
 

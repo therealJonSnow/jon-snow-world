@@ -1,7 +1,7 @@
 
 export default {
-  target: 'static',
   mode: 'universal',
+  target: 'static',
 
   generate: {
     fallback: true
@@ -41,7 +41,7 @@ export default {
   */
   plugins: [
     {
-      src: '~plugins/global', ssr: true
+      src: '~plugins/global'
     }
   ],
 
