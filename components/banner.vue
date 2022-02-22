@@ -1,11 +1,11 @@
 <template>
   <div class="mt-4 mb-24 lg:mx-32 xl:mx-0">
-    <div class="mb-4">
-      <div class="rect-container">
+    <div class="">
+      <!-- <div class="rect-container">
         <div class="rect rect--block shadow-sm" />
         <div class="rect rect--outline" />
-      </div>
-      <h1 class="font-display text-6xl lg:text-8xl ml-10 ">
+      </div> -->
+      <h1 class="font-display p-0 w-fit text-6xl lg:text-8xl ">
         <slot name="title" />
       </h1>
     </div>

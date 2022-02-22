@@ -1,7 +1,7 @@
 <template>
   <nuxt-link class="block" :to="`/blog/${ post.slug }`">
     <div class="card__title font-display">
-      <span v-if="post.category" class="z-50 card__category">{ {{ post.category }} }</span>
+      <span v-if="post.category" class="z-10 card__category">{ {{ post.category }} }</span>
       {{ post.title }}
     </div>
     <div class="card__content">

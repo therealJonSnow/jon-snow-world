@@ -67,7 +67,7 @@ export default {
 
 <style lang="scss">
 .blog-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 w-full gap-y-8 md:gap-x-20 md:gap-y-14;
+  @apply mb-32 grid grid-cols-1 md:grid-cols-2 w-full gap-y-8 md:gap-x-20 md:gap-y-14;
   // gap: 5.5rem 3.5rem;
 }
 </style>

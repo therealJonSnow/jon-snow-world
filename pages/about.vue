@@ -23,7 +23,7 @@
       </Banner>
     </div>
 
-    <div class="container container--mt prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto">
+    <div class="container container--mt prose lg:prose-lg xl:prose-2xl mx-auto">
       <!-- <h4 class="contianer__header--indent" style="opacity: 0;">
         he's got a <span class="span-highlight">name</span>
       </h4>
@@ -41,7 +41,7 @@
       <h4 class="contianer__header--indent">
         in emergency: <span class="span-highlight">add saltwater </span>
       </h4>
-      <Subtitle :color="'transparent'">
+      <Subtitle>
         The_<wbr>Essentials
       </Subtitle>
       <ul class="bullets bullets--mb">
@@ -62,7 +62,7 @@
       <h4 class="contianer__header--indent">
         a <span class="span-highlight">mixed bag </span>
       </h4>
-      <Subtitle :color="'transparent'">
+      <Subtitle>
         My_<wbr>Skillset
       </Subtitle>
       <p class="">

@@ -6,13 +6,13 @@
     /> -->
     <Banner>
       <template slot="title">
-        Hi_I'm_<span class="span-highlight">Jonny.</span>
+        Hi_I'm_<span class="span-highlight">Jonny.</span><span class="drop-shadow-sm">&#128075;</span>
       </template>
       <template slot="subtitle-top">
         A front-end web developer who likes making things
       </template>
     </Banner>
-    <div class="container container--mt">
+    <div class="container">
       <div class="blog-grid">
         <Card
           v-for="post in posts"

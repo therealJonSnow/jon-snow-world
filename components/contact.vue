@@ -3,7 +3,7 @@
     <h4 class="contianer__header--indent">
       questions, ideas or <span class="span-highlight">just want a chat</span>
     </h4>
-    <Subtitle :color="'#FFCE80'">
+    <Subtitle :color="'orange'">
       Get_<wbr/>in_<wbr/>touch
     </Subtitle>
     <form

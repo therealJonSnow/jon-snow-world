@@ -66,17 +66,17 @@ a * {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 18rem auto 100px;
+    margin: 0 auto 0;
     max-width: 860px;
 
     @media (max-width: 1000px) {
-        margin: 190px 0 75px;
+        margin: 0 0 75px;
     }
     @media (max-width: 700px) {
-        margin: 175px 10px 0 10px;
+        margin: 0 10px 0 10px;
     }
     @media (max-width: 500px) {
-        margin: 150px 0px 15px 0px;
+        margin: 0 0px 0 0px;
     }
 
     &--box {

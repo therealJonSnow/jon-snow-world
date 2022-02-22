@@ -9,6 +9,11 @@
 @import '../scss/base/reset';
 @import '../scss/base/global';
 
+@layer base {
+  body *, body *:before, body *:after {
+    @apply transition-colors duration-500;
+  }
+}
 
 @layer components {
   .span-highlight {
