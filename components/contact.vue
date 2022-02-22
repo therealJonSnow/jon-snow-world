@@ -8,7 +8,6 @@
     </Subtitle>
     <form
       class="form flex flex-col space-y-4 -mt-4"
-      data-netlify-recaptcha="true"
       data-netlify="true"
       method="POST"
       name="contact-form"
@@ -30,7 +29,6 @@
         Message:
         <textarea class="form__textarea" rows="5" name="message"></textarea>
       </label>
-      <div data-netlify-recaptcha="true"></div>
       <button class="w-full md:w-2/5 ml-0" type="submit">Send</button>
     </form>
   </div>
