@@ -11,36 +11,26 @@
       data-netlify-recaptcha="true"
       data-netlify="true"
       method="POST"
-      name="contact"
+      name="contact-form"
       netlify-honeypot="bot-field"
     >
-      <div class="form__left">
-        <label class="hidden">
-          Don’t fill this out if you’re human:
-          <input name="bot-field" />
-        </label>
-        <div class="form__group">
-          <label class="form__label">
-            Your Name:
-            <input class="form__input" type="text" name="name"/>
-          </label>   
-        </div>
-        <div class="form__group">
-          <label class="form__label">
-            Your Email:
-            <input class="form__input" type="email" name="email" />
-          </label>
-        </div>
-      </div>
-      <div class="form__right shadow-sm">
-        <div class="form__group form__group--height">
-          <label class="form__label">
-            Message:
-            <textarea class="form__textarea" name="message"></textarea>
-          </label>
-        </div>
-        <div data-netlify-recaptcha="true"></div>
-      </div>
+      <label class="hidden">
+        Don’t fill this out if you’re human:
+        <input name="bot-field" />
+      </label>
+      <label class="form__label">
+        Your Name:
+        <input class="form__input" type="text" name="name"/>
+      </label>
+      <label class="form__label">
+        Your Email:
+        <input class="form__input" type="email" name="email" />
+      </label>
+      <label class="form__label">
+        Message:
+        <textarea class="form__textarea" name="message"></textarea>
+      </label>
+      <div data-netlify-recaptcha="true"></div>
       <button type="submit">Send</button>
     </form>
   </div>
