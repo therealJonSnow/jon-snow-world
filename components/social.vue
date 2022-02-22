@@ -1,8 +1,14 @@
 <template>
-    <div class="social">
-        <a href="https://www.instagram.com/jdsn0w/" target="_blank"><p><fa :icon="['fab', 'instagram']"/></p></a>
-        <a href="https://dribbble.com/itsJS" target="_blank"><p><fa :icon="['fab', 'dribbble']"/></p></a>
-        <a href="https://www.linkedin.com/in/jonathan-snow-452753150/" target="_blank"><p><fa :icon="['fab', 'linkedin']"/></i></p></a>
+    <div class="absolute bottom-0 space-x-16 left-1/2 -translate-x-1/2 social shadow-sm px-6 py-3">
+        <a class="flex items-center justify-center" href="https://www.instagram.com/its_jonny_snow/" target="_blank">
+            <fa :icon="['fab', 'instagram']"/>
+        </a>
+        <a class="flex items-center justify-center" href="https://dribbble.com/itsJS" target="_blank">
+            <fa :icon="['fab', 'dribbble']"/>
+        </a>
+        <a class="flex items-center justify-center" href="https://www.linkedin.com/in/jonathan-snow-452753150/" target="_blank">
+            <fa :icon="['fab', 'linkedin']"/>
+        </a>
     </div>
 </template>
 

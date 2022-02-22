@@ -12,11 +12,15 @@
         A front-end web developer who likes making things
       </template>
     </Banner>
-    <Card
-      v-for="post in posts"
-      :key="post.title"
-      :post="post"
-    />
+    <div class="container container--mt">
+      <div class="blog-grid">
+        <Card
+          v-for="post in posts"
+          :key="post.title"
+          :post="post"
+        />
+      </div>
+    </div>
     <!-- <a :href="`/blog/${post.slug}`" v-for="post in posts" :key="post.title">
       <h2 class="mt-2 text-3xl font-semibold">
         {{ post.title }}

@@ -5,7 +5,7 @@
     </Banner>
     <nuxt-content
       :document="post"
-      class="mx-0 prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
+      class="mx-0 mb-36 prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
     />
     
     <!-- <div>{{ post.title }}</div> -->

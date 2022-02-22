@@ -95,13 +95,9 @@
       <p />
     </div>
 
-    <div>
+    <!-- <div>
       <Contact />
-    </div>
-
-    <div class="container container--social">
-      <Social />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -111,7 +107,7 @@ import Absolute from '../components/absolute.vue'
 import Banner from '../components/banner.vue'
 import Bullet from '../components/bullet.vue'
 import Contact from '../components/contact.vue'
-import Social from '../components/social.vue'
+// import Social from '../components/social.vue'
 import Subtitle from '../components/subtitle.vue'
 import Tri from '../components/tri.vue'
 
@@ -123,7 +119,7 @@ export default {
     Banner,
     Bullet,
     Contact,
-    Social,
+    // Social,
     Subtitle,
     Tri
   },

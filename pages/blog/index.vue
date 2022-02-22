@@ -3,7 +3,7 @@
     <div class="banner">
       <Banner>
         <template slot="title">
-          <span class="span-highlight">bits </span> /n <span class="span-highlight">blogs </span>
+          <span class="span-highlight">bits</span> /n <span class="span-highlight">blogs </span>
         </template>
       </Banner>
     </div>
@@ -11,19 +11,11 @@
     <div class="container container--mt">
       <div class="blog-grid">
         <Card
-          v-for="(post, index) in posts"
-          :key="index"
+          v-for="post in posts"
+          :key="post.title"
           :post="post"
         />
       </div>
-    </div>
-
-    <div >
-      <Contact />
-    </div>
-
-    <div class="container container--social">
-      <Social />
     </div>
   </div>
 </template>
@@ -31,41 +23,39 @@
 <script>
 
 import Banner from '../../components/banner.vue'
-import Contact from '../../components/contact.vue'
-import Social from '../../components/social.vue'
 import Card from '../../components/card.vue'
 
 export default {
   name: 'Blog',
   components: {
     Banner,
-    Contact,
-    Social,
     Card
   },
   props: {
   },
   data () {
     return {
-      posts: [],
-      modalSrc: '',
-      modalVisible: false,
-      page: [],
-      title: 'Blogs n Bits'
+      title: 'bits \'n\' blogs'
     }
   },
-  mounted () {
-    console.log(this.posts)
+  async asyncData ({ $content }) {
+    const posts = await $content('blogs')
+      .sortBy('createdAt', 'desc')
+      .fetch()
+    console.log('posts', posts)
+    return {
+      posts
+    }
   },
   methods: {
-    triggerModal (event) {
-      const target = event.target
-      const parent = target.closest('.container__row__item')
-      const child = parent.firstElementChild.getAttribute('src')
+    // triggerModal (event) {
+    //   const target = event.target
+    //   const parent = target.closest('.container__row__item')
+    //   const child = parent.firstElementChild.getAttribute('src')
 
-      this.modalSrc = child
-      this.modalVisible = true
-    }
+    //   this.modalSrc = child
+    //   this.modalVisible = true
+    // }
   },
   head () {
     return {
@@ -75,7 +65,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

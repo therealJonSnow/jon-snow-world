@@ -1,8 +1,7 @@
-
 <template>
-  <div class="px-8 py-16">
+  <div class="fixed top-0 left-0 px-8 py-16">
     <svg
-      class="logo"
+      class="logo scale-115"
       width="60"
       height="116"
       viewBox="0 0 60 116"

@@ -1,43 +1,28 @@
 <template>
-  <div class="font-body min-h-screen w-full flex justify-start items-start">
+  <div class="relative font-body min-h-screen w-full flex justify-start items-start">
     <canvas class="fixed -z-10" id="canvas"></canvas>
     <NavMenu />
     <div class="mx-auto px-8 pt-16">
       <nuxt/>
     </div>
     <Themes />
+    <Social/>
   </div>
 </template>
-
-<style lang="scss">
-.page-enter-active, .page-leave-active {
-    transition: opacity 0.5s;
-}
-.page-enter, .page-leave-active {
-  opacity: 0;
-}
-
-.main-container {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    // width: 100vw;
-    overflow-x: hidden;
-    position: relative;
-}
-</style>
 
 <script>
 
 import NavMenu from '../components/navMenu.vue'
 import Themes from '../components/themes.vue'
+import Social from '../components/social.vue'
 
 export default {
   name: 'App',
 
   components: {
     NavMenu,
-    Themes
+    Themes,
+    Social
   },
 
   mounted () {
@@ -250,3 +235,22 @@ export default {
 }
 
 </script>
+
+
+<style lang="scss">
+.page-enter-active, .page-leave-active {
+    transition: opacity 0.5s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+.main-container {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    // width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+</style>

@@ -1,10 +1,12 @@
 <template>
   <nuxt-link class="block" :to="`/blog/${ post.slug }`">
     <div class="card__title font-display">
-      <span v-if="post.category" class="card__category">{{ post.category }}</span>
+      <span v-if="post.category" class="z-50 card__category">{ {{ post.category }} }</span>
       {{ post.title }}
     </div>
-    <nuxt-content class="card__content" :document="{ body: post.excerpt }" />
+    <div class="card__content">
+      {{ post.description }}
+    </div>
   </nuxt-link>
 </template>
 
@@ -33,32 +35,37 @@ export default {
     text-align: left;
     position: relative;
     background-color: var(--secondary);
-    border-radius: 20px;
+    // border-radius: 20px;
     padding: 2.5rem 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
-    &::after {
-      pointer-events: none;
-      border-radius: 20px;
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 2px solid var(--outline);
-      left: -0.6rem;
-      top: -1rem;
-    }
+    // &::after {
+    //   display: none;
+    //   pointer-events: none;
+    //   border-radius: 20px;
+    //   content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   border: 2px solid var(--outline);
+    //   left: -0.6rem;
+    //   top: -1rem;
+    // }
+
   }
   &__content {
+    @apply shadow-sm;
+
     font-size: 1.25rem;
     // font-family: var(--fontSecondary);
     text-align: left;
     position: relative;
     background-color: var(--primary);
-    border-radius: 20px;
+    // border-radius: 20px;
     padding: 1.5rem 1.5rem;
 
     &::after {
+      display: none;
       pointer-events: none;
       border-radius: 20px;
       content: '';

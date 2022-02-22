@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-1 mb-24">
+  <div class="mt-4 mb-24">
     <div class="mb-4">
       <div class="rect-container">
         <div class="rect rect--block shadow-sm" />
@@ -9,7 +9,7 @@
         <slot name="title" />
       </h1>
     </div>
-    <div class="">
+    <div class="mt-10">
       <h3 class="text-4xl">
         <slot name="subtitle-top" />
       </h3>
