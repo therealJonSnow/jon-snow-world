@@ -50,11 +50,3 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5.5rem 3.5rem;
-  width: 100%;
-}
-</style>

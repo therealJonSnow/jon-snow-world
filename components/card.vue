@@ -28,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   &__title {
-    @apply shadow-sm;
+    @apply shadow-sm mb-3 md:mb-6;
     
     font-size: 3rem;
     line-height: 1;
@@ -37,7 +37,6 @@ export default {
     background-color: var(--secondary);
     // border-radius: 20px;
     padding: 2.5rem 1.5rem;
-    margin-bottom: 1.5rem;
 
     // &::after {
     //   display: none;

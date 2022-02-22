@@ -14,7 +14,8 @@
     <div class="banner">
       <Banner :dot="true" :show-s="true" :full-stop="true">
         <template slot="title">
-          <div class="span-highlight">About_Me</div>
+          <div class="hidden lg:block span-highlight">About_Me</div>
+          <div class="block lg:hidden span-highlight">About Me</div>
         </template>
         <template slot="subtitle-top">
           <!-- A brief guide -->
@@ -22,17 +23,17 @@
       </Banner>
     </div>
 
-    <div class="container container--mt">
+    <div class="container container--mt prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto">
       <!-- <h4 class="contianer__header--indent" style="opacity: 0;">
         he's got a <span class="span-highlight">name</span>
       </h4>
       <Subtitle :color="'transparent'">
         Jonny_Snow
       </Subtitle> -->
-      <p class="container__text">
+      <p class="">
         Hi there! I'm Jonny, a <span class="span-highlight">Creative Front-end Developer</span> and creative based out of Bristol, UK.
       </p>
-      <p class="container__text">
+      <p class="">
         In my spare time I like making <span class="span-highlight">things.</span> Creating or developing my skills to bring ideas to life. Adding those extra touches that make peoples heads turn and take notice.
       </p>
       <p />
@@ -41,7 +42,7 @@
         in emergency: <span class="span-highlight">add saltwater </span>
       </h4>
       <Subtitle :color="'transparent'">
-        The_Essentials
+        The_<wbr>Essentials
       </Subtitle>
       <ul class="bullets bullets--mb">
         <Bullet :yellow="true">
@@ -62,16 +63,16 @@
         a <span class="span-highlight">mixed bag </span>
       </h4>
       <Subtitle :color="'transparent'">
-        My_Skillset
+        My_<wbr>Skillset
       </Subtitle>
-      <p class="container__text">
+      <p class="">
         I am a strong communicator who enjoys working with diverse clients through a pragmatic and flexible process to deliver beautiful optimised digital solutions.
       </p>
-      <p class="container__text">
+      <p class="">
         As a marine engineer turned developer I'm not your usual suspect, but if you need a website built underwater I'm your guy.
       </p>
       <p />
-      <ul class="bullets bullets--mb">
+      <ul class="bullets">
         <Bullet :yellow="true">
           Strong HTML, CSS and JavaScript
         </Bullet>
@@ -91,8 +92,6 @@
           MEng in Marine Engineering from Southampton University
         </Bullet>
       </ul>
-      <p class="container__text" />
-      <p />
     </div>
 
     <div>

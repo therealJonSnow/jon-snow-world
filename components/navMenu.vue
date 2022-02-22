@@ -1,7 +1,7 @@
 <template>
-  <div class="fixed top-0 left-0 px-8 py-16">
+  <div class="z-50 fixed top-0 left-0 flex lg:flex-col lg:px-8 py-16">
     <svg
-      class="logo scale-115"
+      class="hidden lg:block logo scale-115"
       width="60"
       height="116"
       viewBox="0 0 60 116"
@@ -13,8 +13,8 @@
       <path class="letter letter-j" d="M2.12159 51.9025C2.12159 92.0042 56.764 94.3826 56.764 52.3248C56.764 29.6196 56.3923 12.1729 56.764 1.73999L2.12158 1.73999" stroke-width="3" stroke-linecap="round" />
       <path class="letter letter-s" d="M2.12158 81.4177C2.12158 122.034 56.764 122.788 56.764 81.4177L2.12158 53.7221C2.12158 13.7612 56.764 15.782 56.764 54.989" stroke-width="3" stroke-linecap="round" />
     </svg>
-    <div id="navMenu">
-      <div class="navMenu_list flex flex-col font-display">
+    <div id="navMenu" class="shadow-sm lg:shadow-none px-4 py-2 lg:p-0 bg-secondary lg:bg-transparent">
+      <div class="navMenu_list h-min lg:h-auto flex space-x-4 lg:space-x-0 lg:flex-col font-display">
         <nuxt-link to="/" class="navMenu__item">
           home
         </nuxt-link>

@@ -13,6 +13,11 @@ module.exports = {
       'display': ['Cutive Mono', 'sans-serif'],
       'body': ['Cutive Mono', 'sans-serif']
     },
+    colors: {
+      'primary': '#C3FFFA',
+      'secondary': '#FFCE80',
+      'transparent': 'rgba(0, 0, 0, 0)'
+    },
     extend: {
       boxShadow: {
         'sm': '0.9px 1px 1.5px hsl(var(--shadow-color) / 0.29), 1.5px 1.5px 2.4px -1.2px hsl(var(--shadow-color) / 0.29), 3.5px 3.5px 5.6px -2.5px hsl(var(--shadow-color) / 0.29);',

@@ -4,7 +4,7 @@
       questions, ideas or <span class="span-highlight">just want a chat</span>
     </h4>
     <Subtitle :color="'#FFCE80'">
-      Get_in_touch
+      Get_<wbr/>in_<wbr/>touch
     </Subtitle>
     <form
       class="form flex flex-col space-y-4 -mt-4"
@@ -17,19 +17,19 @@
         Don’t fill this out if you’re human:
         <input name="bot-field" />
       </label>
-      <label class="form__label w-full md:w-3/4">
+      <label class="form__label w-full lg:w-3/4">
         Your Name:
         <input class="form__input" type="text" name="name"/>
       </label>
-      <label class="form__label w-full md:w-3/4">
+      <label class="form__label w-full lg:w-3/4">
         Your Email:
         <input class="form__input" type="email" name="email" />
       </label>
-      <label class="form__label w-full md:w-3/4">
+      <label class="form__label w-full lg:w-3/4">
         Message:
         <textarea class="form__textarea" rows="5" name="message"></textarea>
       </label>
-      <button class="w-full md:w-2/5 ml-0" type="submit">Send</button>
+      <button class="w-full lg:w-2/5 ml-0" type="submit">Send</button>
     </form>
   </div>
 </template>

@@ -30,7 +30,7 @@
 }
 
 .bullets__item {
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 1.25px;
     line-height: 1.5;

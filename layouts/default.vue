@@ -1,8 +1,8 @@
 <template>
-  <div class="relative font-body min-h-screen w-full flex justify-start items-start">
+  <div class="relative font-body min-h-screen w-full ">
     <canvas class="fixed -z-10" id="canvas"></canvas>
     <NavMenu />
-    <div class="mx-auto px-8 pt-16">
+    <div class="mx-auto px-8 pt-32 lg:pt-16">
       <nuxt/>
     </div>
     <Themes />

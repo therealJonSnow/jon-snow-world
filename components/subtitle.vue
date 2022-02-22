@@ -1,41 +1,12 @@
 <template>
-    <div class="subtitle" :class="{ 'subtitle--tall': margin }">   
-        <div class="subtitle__highlight " :class="color !== 'transparent' ? 'shadow-sm' : ''" :style="styleHighlight"></div>
-        <div class="subtitle__title"><slot/></div>
+    <div class="subtitle mb-8 relative" :class="{ 'mt-28 mb-20': margin }">   
+        <div class="absolute top-1/2 h-[42%] w-[104%] -z-10" :class="color !== 'transparent' ? 'shadow-sm' : ''" :style="styleHighlight"></div>
+        <div class="text-5xl leading-10 lg:leading-none"><slot/></div>
     </div>
 
 </template>
 
-<style lang="scss" scoped>
-.subtitle {
-    margin-bottom: 2rem;
-    position: relative;
-
-    &--tall {
-        margin-bottom: 5rem;
-        margin-top: 7rem;
-    }
-}
-
-.subtitle__title {
-    // font-family: var(--fontPrimary);
-    font-size: 3.25rem;
-    font-weight: 300;
-    text-align: left;
-}
-
-.subtitle__highlight{
-    top: 50%;
-    // font-family: var(--fontSecondary);
-    height: 42%;
-    position: absolute;
-    width: 104%;
-    z-index: -1;
-}
-</style>
-
 <script>
-/*jshint esversion: 6 */
 export default {
   name: 'subtitle',
 
