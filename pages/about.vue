@@ -95,9 +95,9 @@
       <p />
     </div>
 
-    <!-- <div>
+    <div>
       <Contact />
-    </div> -->
+    </div>
   </div>
 </template>
 
