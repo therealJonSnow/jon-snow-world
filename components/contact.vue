@@ -6,65 +6,42 @@
     <Subtitle :color="'transparent'">
       Get_in_touch
     </Subtitle>
-
-    <!-- <form class="form" method="POST" action="/send" @submit="submitForm">
+    <form
+      class="form"
+      data-netlify-recaptcha="true"
+      data-netlify="true"
+      method="POST"
+      name="contact"
+      netlify-honeypot="bot-field"
+    >
       <div class="form__left">
+        <label class="hidden">
+          Don’t fill this out if you’re human:
+          <input name="bot-field" />
+        </label>
         <div class="form__group">
-          <label class="form__label" for="name">Name:</label>
-          <input v-model="name" class="form__input" type="text" name="name" placeholder="Name">
-          <transition name="fade">
-            <span v-if="nameError" class="form__error">{{ nameError }}</span>
-          </transition>
+          <label class="form__label">
+            Your Name:
+          </label>   
+          <input class="form__input" type="text" name="name"/>
         </div>
         <div class="form__group">
-          <label class="form__label" for="email">Email:</label>
-          <input v-model="email" class="form__input" type="email" name="email" placeholder="Email">
-          <transition name="fade">
-            <span v-if="emailError" class="form__error">{{ emailError }}</span>
-          </transition>
+          <label class="form__label">
+            Your Email:
+          </label>
+          <input class="form__input" type="email" name="email" />
         </div>
       </div>
-      <div class="form__right" :class="{ 'form__right--blue': focus }">
+      <div class="form__right shadow-sm">
         <div class="form__group form__group--height">
-          <label class="form__label" for="message">Message:</label>
-          <textarea
-            id="message"
-            v-model="message"
-            class="form__textarea"
-            name="message"
-            placeholder="Insert awesome idea here"
-            @focus="focusToggle"
-            @blur="focusToggle"
-          />
-          <transition name="fade">
-            <span v-if="messageError" class="form__error">{{ messageError }}</span>
-          </transition>
+          <label class="form__label">
+            Message:
+          </label>
+          <textarea class="form__textarea" name="message"></textarea>
         </div>
+        <div data-netlify-recaptcha="true"></div>
       </div>
-
-      <button type="submit" class="container__button">
-        Submit
-      </button>
-    </form> -->
-    <form name="contact" method="POST" data-netlify="true">
-      <p>
-        <label>Your Name: <input type="text" name="name" /></label>   
-      </p>
-      <p>
-        <label>Your Email: <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <label>Your Role: <select name="role[]" multiple>
-          <option value="leader">Leader</option>
-          <option value="follower">Follower</option>
-        </select></label>
-      </p>
-      <p>
-        <label>Message: <textarea name="message"></textarea></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
+      <button type="submit">Send</button>
     </form>
   </div>
 </template>
