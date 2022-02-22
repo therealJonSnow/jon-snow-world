@@ -10,7 +10,7 @@
       </h1>
     </div>
     <div class="mt-10">
-      <h3 class="text-4xl">
+      <h3 class="text-4xl font-normal">
         <slot name="subtitle-top" />
       </h3>
     </div>

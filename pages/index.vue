@@ -6,7 +6,7 @@
     /> -->
     <Banner>
       <template slot="title">
-        Hi_I'm_<span class="span-highlight">Jonny.</span><span class="drop-shadow-sm">&#128075;</span>
+        Hi_I'm_<span class="span-highlight">Jonny.</span><img src="../assets/images/face.png" class="inline w-48 -ml-16 rotate-[20deg] drop-shadow-sm"/>
       </template>
       <template slot="subtitle-top">
         A front-end web developer who likes making things
