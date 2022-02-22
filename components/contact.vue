@@ -22,22 +22,22 @@
         <div class="form__group">
           <label class="form__label">
             Your Name:
+            <input class="form__input" type="text" name="name"/>
           </label>   
-          <input class="form__input" type="text" name="name"/>
         </div>
         <div class="form__group">
           <label class="form__label">
             Your Email:
+            <input class="form__input" type="email" name="email" />
           </label>
-          <input class="form__input" type="email" name="email" />
         </div>
       </div>
       <div class="form__right shadow-sm">
         <div class="form__group form__group--height">
           <label class="form__label">
             Message:
+            <textarea class="form__textarea" name="message"></textarea>
           </label>
-          <textarea class="form__textarea" name="message"></textarea>
         </div>
         <div data-netlify-recaptcha="true"></div>
       </div>
