@@ -1,6 +1,43 @@
-:root {
-  --primary: #C3FFFA;
-  --secondary: #FFCE80;
+html {
+  min-height: 100vh;
+  max-width: 100vw;
+}
+body {
+  overflow: auto;
+  background-color: var(--background);
+  // &::-webkit-scrollbar {
+  //   background-color: transparent;
+  //   width: 2rem;
+  // }
+  // &::-webkit-scrollbar-track {
+  //   background-color: transparent;
+
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: var(--secondary);
+  //   border-radius: 10px;
+  //   margin-right: 10px;
+  //   width: 1rem;
+  // }
+  // &::-webkit-scrollbar-corner {
+  //   background: #9b6a2f;
+  // }
+  &::-webkit-scrollbar {
+    width: 15px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2rem 2rem transparent;
+    border: solid 5px transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 2rem 2rem var(--secondary);
+    border: solid 4px transparent;
+    border-radius: 2rem;
+  }
+  
 }
 
 .page {
@@ -10,9 +47,9 @@
     position: relative;
     transition: opacity 0.5s ease;
 
-    @media (max-width: 1000px) {
-        margin: 0 20px;
-    }
+    // @media (max-width: 1000px) {
+    //     margin: 0 20px;
+    // }
 }
 
 a * {
@@ -112,7 +149,7 @@ a * {
             }
 
             img {
-                box-shadow: 0 2px 15px -5px $outline;
+                box-shadow: 0 2px 15px -5px var(--outline);
                 max-width: 400px;
                 width: 100%;
             }
@@ -167,7 +204,7 @@ a * {
 }
 
 .contianer__header--indent {
-    font-family: $fontSecondary;
+    // font-family: var(--fontSecondary);
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0;
@@ -180,8 +217,8 @@ a * {
 
 // BUTTON
 a {
-    all: unset;
-    display: flex;
+    // all: unset;
+    // display: flex;
 }
 
 .button {
@@ -193,7 +230,7 @@ button {
     border-radius: 0;
     box-shadow: none;
     border: none;
-    font-family: $fontPrimary;
+    // font-family: var(--fontPrimary);
     margin-left: auto;
     margin-top: 20px;
     padding: 0 2rem;
@@ -225,12 +262,10 @@ button {
         left: -1.5%;
         background-color: var(--secondary);
     }
-    &:focus:before {
-    }
 
     &:after {
         background-color: transparent;
-        border: 1.5px solid $outline;
+        border: 1.5px solid var(--outline);
         position: absolute;
         content: '';
         height: 100%;
@@ -319,18 +354,3 @@ button {
     }
 }
 
-.span-highlight {
-    position: relative;
-
-    &:before {
-        background-color: var(--primary);
-        box-sizing: border-box;
-        content: '';
-        height: 50%;
-        left: 2.5%;
-        position: absolute;
-        top: 48%;
-        width: 100%;
-        z-index: -1;          
-    }
-}

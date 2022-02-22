@@ -56,7 +56,7 @@
         .form {
             display: flex;
             flex-wrap: wrap;
-            font-family: $fontSecondary;
+            // font-family: var(--fontSecondary);
             font-size: 1.2rem;
             width: 100%;
 
@@ -116,7 +116,7 @@
             &__input {
                 background-color: transparent;
                 border: none;
-                border-bottom: 1px solid $outline;
+                border-bottom: 1px solid var(--outline);
                 box-shadow: none;
                 box-shadow: 0 0 0 0 var(--secondary);
                 font-size: 1.05rem;
@@ -191,7 +191,7 @@
 </style>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import Subtitle from './subtitle'
 /* jshint esversion: 6 */
 export default {
@@ -264,19 +264,19 @@ export default {
 
       const vm = this
 
-      if (this.errors.length === 0) {
-        return axios.post('/api/contact', {
-          name: this.name,
-          email: this.email,
-          message: this.message
-        }).then(function (response) {
-          vm.$router.push({
-            path: '/sent'
-          })
-        }).catch((error) => {
-          this.errors = error.response.data.errors
-        })
-      }
+      // if (this.errors.length === 0) {
+      //   return axios.post('/api/contact', {
+      //     name: this.name,
+      //     email: this.email,
+      //     message: this.message
+      //   }).then(function (response) {
+      //     vm.$router.push({
+      //       path: '/sent'
+      //     })
+      //   }).catch((error) => {
+      //     this.errors = error.response.data.errors
+      //   })
+      // }
       // else {
       //   console.log(this.errors)
       //   console.log('no')

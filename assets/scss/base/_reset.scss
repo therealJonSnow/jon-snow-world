@@ -5,29 +5,29 @@
 }
 
 ::selection {
-  background: $secondary;
+  background: var(--secondary);
 }
 
 html {
-  font-size: $baseFontSize;
+  font-size: var(--baseFontSize);
 
-  @media #{$tablet} {
-    font-size: $tabletFontSize;
+  @media #{--tablet} {
+    font-size: var(--tabletFontSize);
   }
 
-  @media #{$phone} {
-    font-size: $phoneFontSize;
+  @media #{--phone} {
+    font-size: var(--phoneFontSize);
   }
-  @media #{$smallPhone} {
-    font-size: $smallPhoneFontSize;
+  @media #{--smallPhone} {
+    font-size: var(--smallPhoneFontSize);
   }
 }
 
 body {
   border: 0;
-  color: $base;
-  font-family: $fontPrimary;
-  font-size: $baseFontSize;
+  color: var(--base);
+  // font-family: var(--fontPrimary);
+  font-size: var(--baseFontSize);
   line-height: 1.5;
   margin: 0;
   min-height: 100vh;
@@ -54,11 +54,11 @@ input, button, textarea, select {
 
 h1, h2, h3, h4, h5, h6 {
   color: inherit;
-  font-family: $fontPrimary;
+  // font-family: var(--fontPrimary);
   font-weight: bold;
   line-height: 1.1;
 
-  @media #{$phone} {
+  @media #{--phone} {
     text-align: center;
   }
 }
@@ -80,7 +80,7 @@ h2 {
   font-size: 68px;
   margin: 0 0 rem(20) 0;
 
-  @media #{$phone} {
+  @media #{--phone} {
     font-size: rem(40);
   }
 }
@@ -89,7 +89,7 @@ h3 {
   font-size: rem(50);
   margin: 0 0 rem(20) 0;
 
-  @media #{$phone} {
+  @media #{--phone} {
     font-size: rem(32);
   }
 }
@@ -98,7 +98,7 @@ h4 {
   font-size: rem(36);
   margin: 1.5rem 0 rem(16) 0;
 
-  @media #{$phone} {
+  @media #{--phone} {
     font-size: rem(24);
   }
 }
@@ -116,14 +116,14 @@ h6 {
 
 p, ul {
   line-height: 1.33;
-  font-family: $fontSecondary;
+  // font-family: var(--fontSecondary);
   margin: 1rem 0 rem(20) 0;
 
   // &:last-child {
   //   margin: 0;
   // }
 
-  @media #{$phone} {
+  @media #{--phone} {
     text-align: center;
   }
 }

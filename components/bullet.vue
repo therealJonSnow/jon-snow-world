@@ -48,6 +48,7 @@
 }
 
 .bullets__item--slot:before {
+    @apply shadow-sm;
     background-color: var(--primary);
     border-radius: 50%;
     content: '';
@@ -59,7 +60,7 @@
 }
 
 .bullets__item--slot:after {
-    border: 2px solid black;
+    border: 2px solid var(--outline);
     border-radius: 50%;
     content: '';
     height: 1.2rem;

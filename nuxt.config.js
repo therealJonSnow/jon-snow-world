@@ -1,4 +1,5 @@
-
+import { resolve } from 'path'
+import tailwindTypography from '@tailwindcss/typography'
 export default {
   target: 'static',
 
@@ -17,20 +18,19 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: 'iQp0mxpdcc4y0iOiYjFbZ8haHarriLOQWvtE0QhLsBc' },
-      { hid: 'description', name: 'description', content: 'Hi I\'m, Jonny Snow, a front end web developer currently based in Hampshire looking to help those in need of website with flare.' },
+      { hid: 'description', name: 'description', content: 'Hi I\'m, Jonny Snow, a front end web developer currently based in Hampshire looking to help those in need of website with flare.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Poiret+One&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Cutive+Mono:300,400,700|Poiret+One&display=swap' }
     ]
   },
   loading: false,
   /*
   ** Global CSS
   */
-  css: [
-  ],
+  css: ['~/assets/scss/tailwind.scss'],
   /*
   ** Plugins to load before mounting the App
   */
@@ -40,20 +40,28 @@ export default {
     }
   ],
 
+  tailwindcss: {
+    config: {
+      plugins: [tailwindTypography],
+    }
+  },
+
   serverMiddleware: [
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/tailwindcss'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
+    '@nuxt/content',
+    'nuxt-purgecss',
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
@@ -80,9 +88,9 @@ export default {
 
   styleResources: {
     // your settings here
-    scss: [
-      '~/assets/scss/*.scss'
-    ]
+    // scss: [
+    //   '~/assets/scss/*.scss'
+    // ]
   },
 
   pageTransition: {
@@ -91,17 +99,16 @@ export default {
   },
 
   env: {
-    strapiBaseUri: process.env.API_URL
-  },
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
   },
   /*
   ** Build configuration
   */
   build: {
-  }
+    extractCSS: true,
+    postcss: {
+      plugins: { tailwindcss: resolve(__dirname, './tailwind.config.js') }
+    }
+  },
+
+  purgeCSS: { mode: 'postcss' }
 }

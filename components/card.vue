@@ -1,15 +1,14 @@
 <template>
-  <nuxt-link class="block" :to="`/blog/${ post.id }`">
-    <div class="card__title">
-      <span v-if="post.category" class="card__category">{ {{ post.category.Name }} }</span>
+  <nuxt-link class="block" :to="`/blog/${ post.slug }`">
+    <div class="card__title font-display">
+      <span v-if="post.category" class="card__category">{{ post.category }}</span>
       {{ post.title }}
     </div>
-    <div class="card__content" v-html="$md.render(post.description)" />
+    <nuxt-content class="card__content" :document="{ body: post.excerpt }" />
   </nuxt-link>
 </template>
 
 <script>
-/* jshint esversion: 6 */
 export default {
   name: 'Card',
 
@@ -27,6 +26,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   &__title {
+    @apply shadow-sm;
+    
     font-size: 3rem;
     line-height: 1;
     text-align: left;
@@ -43,14 +44,14 @@ export default {
       position: absolute;
       width: 100%;
       height: 100%;
-      border: 2px solid $outline;
+      border: 2px solid var(--outline);
       left: -0.6rem;
       top: -1rem;
     }
   }
   &__content {
     font-size: 1.25rem;
-    font-family: $fontSecondary;
+    // font-family: var(--fontSecondary);
     text-align: left;
     position: relative;
     background-color: var(--primary);
@@ -64,7 +65,7 @@ export default {
       position: absolute;
       width: 100%;
       height: 100%;
-      border: 2px solid $outline;
+      border: 2px solid var(--outline);
       left: -0.6rem;
       top: -1rem;
     }

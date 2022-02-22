@@ -14,7 +14,7 @@
     justify-content: space-around;
 
     a{
-    	color: $base;
+    	color: var(--base);
         cursor: pointer;
         font-size: 26px;
     }

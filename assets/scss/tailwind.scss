@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../scss/abstracts/variables';
+@import '../scss/abstracts/functions';
+@import '../scss/abstracts/mixins';
+
+@import '../scss/base/reset';
+@import '../scss/base/global';
+
+
+@layer components {
+  .span-highlight {
+    position: relative;
+    
+    &:before {
+        @apply shadow-sm;
+        background-color: var(--primary);
+        box-sizing: border-box;
+        content: '';
+        height: 50%;
+        left: 2.5%;
+        position: absolute;
+        top: 48%;
+        width: 100%;
+        z-index: -1;          
+    }
+  }
+}

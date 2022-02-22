@@ -1,6 +1,6 @@
 <template>
-  <div class="page">
-    <absolute v-parallax="0.4" :top="'906px'" :left="'120%'">
+  <div class="page relative ">
+    <!-- <absolute :top="'906px'" :left="'120%'">
       <Tri
         :scale="'(0.1)'"
         :top="'0'"
@@ -9,12 +9,12 @@
         :center="'2rem'"
         :color="'var(--secondary)'"
       />
-    </absolute>
+    </absolute> -->
 
-    <div v-parallax="0" class="banner">
+    <div class="banner">
       <Banner :dot="true" :show-s="true" :full-stop="true">
         <template slot="title">
-          <span class="span-highlight">About_Me</span>
+          <div class="span-highlight">About_Me</div>
         </template>
         <template slot="subtitle-top">
           <!-- A brief guide -->

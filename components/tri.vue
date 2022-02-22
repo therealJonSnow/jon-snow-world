@@ -45,12 +45,13 @@
 
     &--outline {
         fill: none;
-        stroke: $outline;
+        stroke: var(--outline);
         stroke-width: 0.35px;
         vector-effect: non-scaling-stroke;
     }
 
     &--block {
+        @apply shadow-sm;
         stroke: transparent;
         stroke-width: 0px;
     }

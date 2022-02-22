@@ -1,6 +1,6 @@
 <template>
   <div v-if="posts.length > 0" class="page">
-    <div v-parallax="0" class="banner">
+    <div class="banner">
       <Banner>
         <template slot="title">
           <span class="span-highlight">bits </span> /n <span class="span-highlight">blogs </span>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div v-parallax="0">
+    <div >
       <Contact />
     </div>
 
@@ -44,11 +44,6 @@ export default {
     Card
   },
   props: {
-  },
-  async fetch () {
-    this.posts = await fetch(
-      'https://jon-snow-world-backend.herokuapp.com/posts'
-    ).then(res => res.json())
   },
   data () {
     return {

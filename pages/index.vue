@@ -1,31 +1,50 @@
 <template>
   <div class="page">
-    <div class="banner">
-      <Banner>
-        <template slot="title">
-          Hi_I'm_<span class="span-highlight">Jonny.</span>
-        </template>
-        <template slot="subtitle-top">
-          <!-- A front-end web developer who likes making -->
-          SITE UNDER CONSTRUCTION
-        </template>
-      </Banner>
-    </div>
-    <component
+    <!-- <component
       :is="dropper"
       ref="dropper"
+    /> -->
+    <Banner>
+      <template slot="title">
+        Hi_I'm_<span class="span-highlight">Jonny.</span>
+      </template>
+      <template slot="subtitle-top">
+        A front-end web developer who likes making things
+      </template>
+    </Banner>
+    <Card
+      v-for="post in posts"
+      :key="post.title"
+      :post="post"
     />
+    <!-- <a :href="`/blog/${post.slug}`" v-for="post in posts" :key="post.title">
+      <h2 class="mt-2 text-3xl font-semibold">
+        {{ post.title }}
+      </h2>
+      <nuxt-content :document="{ body: post.excerpt }" />
+    </a> -->
   </div>
 </template>
 
 <script>
 import Banner from '../components/banner.vue'
+import Card from '../components/card.vue'
 
 export default {
   name: 'Home',
   components: {
     Banner,
-    Dropper: () => import('../components/dropper.vue')
+    Card,
+    // Dropper: () => import('../components/dropper.vue')
+  },
+  async asyncData ({ $content }) {
+    const posts = await $content('blogs')
+      .sortBy('createdAt', 'desc')
+      .fetch()
+    console.log('posts', posts)
+    return {
+      posts
+    }
   },
   data () {
     return {
@@ -35,9 +54,9 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(function () {
-      this.dropper = 'Dropper'
-    })
+    // this.$nextTick(function () {
+    //   this.dropper = 'Dropper'
+    // })
   },
   methods: {
     closeModal (event) {
@@ -61,11 +80,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.banner {
-  margin-top: 0;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-}
+
 </style>

@@ -44,7 +44,7 @@
 
 .rectangle__outline {
     fill: none;
-    stroke: $outline;
+    stroke: var(--outline);
     stroke-width: 4px;
     transform: translate(1.5rem, -1.5rem);
 

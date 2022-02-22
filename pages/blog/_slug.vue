@@ -1,70 +1,50 @@
 <template>
   <div class="page">
-    <div v-parallax="0" class="banner">
-      <Banner :dot="false" :show-s="true">
-        <template slot="title">
-          <span class="span-highlight">{{ post.title }}</span>
-        </template>
-      </Banner>
-    </div>
-
-    <div class="container container--mt" v-html="$md.render(post.content)" />
-
-    <div v-parallax="0">
-      <Contact />
-    </div>
-
-    <div class="container container--social">
-      <Social />
-    </div>
+    <Banner>
+      <template slot="title">{{post.title}}</template>
+    </Banner>
+    <nuxt-content
+      :document="post"
+      class="mx-0 prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"
+    />
+    
+    <!-- <div>{{ post.title }}</div> -->
   </div>
 </template>
-
 <script>
-
 import Banner from '../../components/banner.vue'
-import Contact from '../../components/contact.vue'
-import Social from '../../components/social.vue'
-import Card from '../../components/card.vue'
+// import Contact from '../../components/contact.vue'
+// import Social from '../../components/social.vue'
 
 export default {
   name: 'Blog',
   components: {
-    Banner,
-    Contact,
-    Social,
-    Card
+    Banner
   },
   props: {
   },
-  async fetch () {
-    this.post = await fetch(
-      'https://jon-snow-world-backend.herokuapp.com/posts/' + this.$route.params.slug
-    ).then(res => res.json())
+  async asyncData ({ $content, params }) {
+    console.log(params.slug)
+    const post = await $content('blogs', params.slug).fetch()
+    console.log(post)
+    return { post } 
+  },
+  head() {
+    return {
+      title: this.post.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.post.title },
+        { hid: 'og:description', property: 'og:description', content: this.post.description },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: this.post.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.post.description }
+      ]
+    }
   },
   data () {
     return {
-      post: {},
-      modalSrc: '',
-      modalVisible: false,
-      page: []
-    }
-  },
-  mounted () {
-  },
-  methods: {
-    triggerModal (event) {
-      const target = event.target
-      const parent = target.closest('.container__row__item')
-      const child = parent.firstElementChild.getAttribute('src')
-
-      this.modalSrc = child
-      this.modalVisible = true
-    }
-  },
-  head () {
-    return {
-      title: this.post.title
     }
   }
 }

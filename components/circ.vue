@@ -18,7 +18,7 @@
 .circle {
     &.outline {
         fill: none;
-        stroke: $outline;
+        stroke: var(--outline);
         stroke-width: 2px;
         transform: translate(1%, -1.5%);
     }

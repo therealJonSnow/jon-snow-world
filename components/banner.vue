@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <div class="banner__container--main">
+  <div class="mt-1 mb-24">
+    <div class="mb-4">
       <div class="rect-container">
-        <div class="rect rect--block" />
+        <div class="rect rect--block shadow-sm" />
         <div class="rect rect--outline" />
       </div>
-      <h1 class="title">
+      <h1 class="font-display md:text-8xl sm:text-6xl ml-10 ">
         <slot name="title" />
       </h1>
     </div>
-    <div class="banner__container banner__container--sub">
-      <h3>
+    <div class="">
+      <h3 class="text-4xl">
         <slot name="subtitle-top" />
       </h3>
     </div>
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-/* jshint esversion: 6 */
 export default {
   name: 'Banner',
 
@@ -29,75 +28,29 @@ export default {
 </script>
 
 <style lang="scss">
-.banner {
-    display: block;
-    margin: 25vh auto 15vh;
-    position: relative;
-    width: fit-content;
-    max-width: 860px;
+.rect-container {
+  margin-right: 3rem;
+  position: relative;
+  height: 100%;
 
-    @media (max-width: 400px) {
-        font-size: 0.8rem;
+  .rect {
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 6.25rem;
+    position: absolute;
+    width: 3rem;
+
+    &--outline {
+      border: 2px solid var(--outline);
+      left: -0.5rem;
+      top: -0.4rem;
     }
 
-    .banner__container {
-        position: relative;
+    &--block {
+      background-color: var(--secondary);
+      left: 0;
+      top: 0.4rem;
     }
-
-    h1{
-        font-size: 6.125em;
-        font-weight: 400;
-        padding-left: 4rem;
-
-        @media (max-width: 400px) {
-            font-size: 6em;
-        }
-
-        @media (max-width: 320px) {
-            font-size: 5.5em;
-        }
-    }
-
-    h3 {
-        font-family: $fontSecondary;
-        font-size: 2em;
-        font-weight: 300;
-        line-height: 1.2;
-
-        & > span {
-            font-family: $fontPrimary;
-            font-size: 3.125em;
-
-            @media (max-width: 400px) {
-                font-size: 2.75em;
-            }
-        }
-    }
-
-    .rect-container {
-      margin-right: 3rem;
-      position: relative;
-      height: 100%;
-
-      .rect {
-        border-radius: 20px;
-        box-sizing: border-box;
-        height: 6.25rem;
-        position: absolute;
-        width: 3rem;
-
-        &--outline {
-          border: 2px solid $outline;
-          left: -0.5rem;
-          top: -0.4rem;
-        }
-
-        &--block {
-          background-color: var(--secondary);
-          left: 0;
-          top: 0.4rem;
-        }
-      }
-    }
+  }
 }
 </style>

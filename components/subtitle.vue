@@ -18,7 +18,7 @@
 }
 
 .subtitle__title {
-    font-family: $fontPrimary;
+    // font-family: var(--fontPrimary);
     font-size: 3.25rem;
     font-weight: 300;
     text-align: left;
@@ -26,7 +26,7 @@
 
 .subtitle__highlight{
     bottom: 0%;
-    font-family: $fontSecondary;
+    // font-family: var(--fontSecondary);
     height: 42%;
     position: absolute;
     width: 104%;
