@@ -30,7 +30,7 @@
         Jonny_Snow
       </Subtitle> -->
       <p class="container__text">
-        Hi there! I'm Jonny, a <span class="span-highlight">Creative Front-end Developer</span> and creative based out of Winchester, Hampshire.
+        Hi there! I'm Jonny, a <span class="span-highlight">Creative Front-end Developer</span> and creative based out of Bristol, UK.
       </p>
       <p class="container__text">
         In my spare time I like making <span class="span-highlight">things.</span> Creating or developing my skills to bring ideas to life. Adding those extra touches that make peoples heads turn and take notice.
