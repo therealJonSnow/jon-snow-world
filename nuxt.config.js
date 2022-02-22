@@ -46,6 +46,10 @@ export default {
     }
   },
 
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
+
   serverMiddleware: [
   ],
   /*
@@ -58,6 +62,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/google-analytics',
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
     '@nuxt/content',
