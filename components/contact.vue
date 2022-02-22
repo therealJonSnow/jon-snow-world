@@ -3,11 +3,11 @@
     <h4 class="contianer__header--indent">
       questions, ideas or <span class="span-highlight">just want a chat</span>
     </h4>
-    <Subtitle :color="'transparent'">
+    <Subtitle :color="'#FFCE80'">
       Get_in_touch
     </Subtitle>
     <form
-      class="form"
+      class="form flex flex-col space-y-4 -mt-4"
       data-netlify-recaptcha="true"
       data-netlify="true"
       method="POST"
@@ -18,20 +18,20 @@
         Don’t fill this out if you’re human:
         <input name="bot-field" />
       </label>
-      <label class="form__label">
+      <label class="form__label w-full md:w-3/4">
         Your Name:
         <input class="form__input" type="text" name="name"/>
       </label>
-      <label class="form__label">
+      <label class="form__label w-full md:w-3/4">
         Your Email:
         <input class="form__input" type="email" name="email" />
       </label>
-      <label class="form__label">
+      <label class="form__label w-full md:w-3/4">
         Message:
-        <textarea class="form__textarea" name="message"></textarea>
+        <textarea class="form__textarea" rows="5" name="message"></textarea>
       </label>
       <div data-netlify-recaptcha="true"></div>
-      <button type="submit">Send</button>
+      <button class="w-full md:w-2/5 ml-0" type="submit">Send</button>
     </form>
   </div>
 </template>
@@ -41,10 +41,10 @@
         margin-top: 100px;
 
         .form {
+            @apply text-2xl font-normal;
             display: flex;
             flex-wrap: wrap;
             // font-family: var(--fontSecondary);
-            font-size: 1.2rem;
             width: 100%;
 
             &__left, &__right {
@@ -101,18 +101,18 @@
             }
 
             &__input {
+                @apply text-2xl font-normal;
                 background-color: transparent;
                 border: none;
                 border-bottom: 1px solid var(--outline);
                 box-shadow: none;
                 box-shadow: 0 0 0 0 var(--secondary);
-                font-size: 1.05rem;
+                // font-size: 1.05rem;
                 margin-bottom: 0.5rem;
-                margin-right: 2rem;
                 transition-property: box-shadow, border;
                 transition-duration: 0.5s;
                 transition-timing-function: ease;
-                width: 90%;
+                width: 100%;
 
                 @media (max-width: 575px) {
                     width: 100%;
@@ -126,14 +126,17 @@
             }
 
             &__label {
-                font-size: 1.3rem;
+                
+                @apply text-2xl font-bold;
             }
 
             &__textarea {
+                @apply text-2xl font-normal;
                 background-color: transparent;
-                border: none;
+                border-bottom: 1px solid var(--outline);
+                // border: none;
                 height: 100%;
-                font-size: 1.05rem;
+                // font-size: 1.05rem;
                 width: 100%;
 
                 &:focus {
@@ -155,7 +158,7 @@
 
             button {
                 font-size: 1.6rem;
-                margin-left: 2.5rem;
+                // margin-left: 2.5rem;
                 margin-top: 0;
                 position: relative;
 

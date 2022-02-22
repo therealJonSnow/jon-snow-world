@@ -1,6 +1,6 @@
 <template>
     <div class="subtitle" :class="{ 'subtitle--tall': margin }">   
-        <div class="subtitle__highlight" :style="styleHighlight"></div>
+        <div class="subtitle__highlight " :class="color !== 'transparent' ? 'shadow-sm' : ''" :style="styleHighlight"></div>
         <div class="subtitle__title"><slot/></div>
     </div>
 
@@ -25,7 +25,7 @@
 }
 
 .subtitle__highlight{
-    bottom: 0%;
+    top: 50%;
     // font-family: var(--fontSecondary);
     height: 42%;
     position: absolute;
