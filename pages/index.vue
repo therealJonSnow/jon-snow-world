@@ -54,7 +54,7 @@ export default {
     return {
       dropper: '',
       images: '',
-      title: 'Jonny Snow - Hampshire Based Front End Web Developer'
+      title: 'Jonny Snow - Bristol Based Front End Web Developer'
     }
   },
   mounted () {
