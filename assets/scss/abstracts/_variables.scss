@@ -4,63 +4,63 @@
 :root {
   --shadow-color: 0deg 0% 65%;
 
-  --black: #2c3e50;
-  --bg-black: #1b1b1b;
+  --bg-black: #18222b;
   --blue: #C3FFFA;
   --blue-dark: #009c9c;
   --blue-retro: #75c8ae;
   --orange: #FFCE80;
-  --orange-dark: #b46102;
+  --orange-dark: #449300;
   --orange-retro: #e5771e;
   --grey: #707070;
   --grey-light: #e0e0e0;
   --white: #f3f3f3;
   --sepia: #fdefc2;
   
-  --base: var(--black);
+  --type: #2c3e50;
   --primary: var(--blue);
   --secondary: var(--orange);
-  --outline: var(--grey);
-  --background: var(--white);
+  --bg: var(--white);
 
-  // fonts
-  --fontPoiret: 'Poiret One', Helvetica, Arial, sans-serif;
-  --fontOxygen: 'Oxygen', Helvetica, Arial, sans-serif;
-  
-  --fontPrimary: var(--fontPoiret);
-  --fontSecondary: var(--fontOxygen);
-  
-  --baseFontSize: 16px;
-  --tabletFontSize: 14px;
-  --phoneFontSize: 12px;
-  --smallPhoneFontSize: 10px;
-  
-  // breakpoints
-  --desktop: "(max-width: 1450px)";
-  --tablet: "(max-width: 1000px)";
-  --phone: "(max-width: 700px)";
-  --smallPhone: "(max-width: 475px)";
-  
-  // misc
-  --browserContext: 16;
-  --gutter: 5rem;
-  --gutterSmall: 2rem;
-}
-
-.dark-mode {
-  --base: var(--grey-light);
-  --primary: var(--blue-dark);
-  --secondary: var(--orange-dark);
-  --outline: var(--grey-light);
-  --background: var(--bg-black);
-}
-.sepia-mode {
-  --base: var(--black);
-  --primary: var(--blue-retro);
-  --secondary: var(--orange-retro);
   --outline: var(--grey);
-  --background: var(--sepia);
 }
+//   // fonts
+//   --fontPoiret: 'Poiret One', Helvetica, Arial, sans-serif;
+//   --fontOxygen: 'Oxygen', Helvetica, Arial, sans-serif;
+  
+//   --fontPrimary: var(--fontPoiret);
+//   --fontSecondary: var(--fontOxygen);
+  
+//   --baseFontSize: 16px;
+//   --tabletFontSize: 14px;
+//   --phoneFontSize: 12px;
+//   --smallPhoneFontSize: 10px;
+  
+//   // breakpoints
+//   --desktop: "(max-width: 1450px)";
+//   --tablet: "(max-width: 1000px)";
+//   --phone: "(max-width: 700px)";
+//   --smallPhone: "(max-width: 475px)";
+  
+//   // misc
+//   --browserContext: 16;
+//   --gutter: 5rem;
+//   --gutterSmall: 2rem;
+// }
+
+// .dark-mode {
+//   --base: var(--grey-light);
+//   --primary: var(--blue-dark);
+//   --secondary: var(--orange-dark);
+//   --outline: var(--grey-light);
+//   --background: var(--bg-black);
+// }
+// .sepia-mode {
+//   --base: var(--black);
+//   --primary: var(--blue-retro);
+//   --secondary: var(--orange-retro);
+//   --outline: var(--grey);
+//   --background: var(--sepia);
+// }
 
 // z-index
 // --z-index: (

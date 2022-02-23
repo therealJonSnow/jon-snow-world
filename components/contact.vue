@@ -1,8 +1,8 @@
 <template>
-  <div class="container container--contact">
-    <h4 class="contianer__header--indent">
+  <div class="py-20">
+    <h6 class="ml-8">
       questions, ideas or <span class="span-highlight">just want a chat</span>
-    </h4>
+    </h6>
     <Subtitle :color="'orange'">
       Get_<wbr/>in_<wbr/>touch
     </Subtitle>
@@ -29,157 +29,140 @@
         Message:
         <textarea class="form__textarea" rows="5" name="message"></textarea>
       </label>
-      <button class="w-full lg:w-2/5 ml-0" type="submit">Send</button>
+      <button class="w-full sm:w-1/2 lg:w-2/5 ml-0" type="submit">Send</button>
     </form>
   </div>
 </template>
 
 <style lang="scss" scoped>
-    .container--contact {
-        margin-top: 100px;
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 
-        .form {
-            @apply text-2xl font-normal;
-            display: flex;
-            flex-wrap: wrap;
-            // font-family: var(--fontSecondary);
+    &__left, &__right {
+        box-sizing: border-box;
+        width: 50%;
+
+        @media (max-width: 575px) {
             width: 100%;
-
-            &__left, &__right {
-                box-sizing: border-box;
-                width: 50%;
-
-                @media (max-width: 575px) {
-                    width: 100%;
-                }
-            }
-
-            &__left {
-                padding: 10px 0 10px 2.5rem;
-
-                @media (max-width: 575px) {
-                    margin-left: 2.5rem;
-                    padding: 10px 0 10px 0;
-                }
-
-                @media (max-width: 450px) {
-                    margin-left: 0;
-                }
-            }
-
-            &__right {
-                background-color: var(--secondary);
-                padding: 10px;
-                transition: background-color 1s ease;
-
-                @media (max-width: 575px) {
-                    margin-bottom: 3rem;
-                    margin-left: 2.5rem;
-                }
-
-                @media (max-width: 450px) {
-                    margin-left: 0;
-                }
-
-                &--blue {
-                    background-color: var(--primary);
-                }
-            }
-
-            &__group {
-                align-items: flex-start;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                margin-bottom: 1.5rem;
-
-                &--height {
-                    height: 100%;
-                }
-            }
-
-            &__input {
-                @apply text-2xl font-normal;
-                background-color: transparent;
-                border: none;
-                border-bottom: 1px solid var(--outline);
-                box-shadow: none;
-                box-shadow: 0 0 0 0 var(--secondary);
-                // font-size: 1.05rem;
-                margin-bottom: 0.5rem;
-                transition-property: box-shadow, border;
-                transition-duration: 0.5s;
-                transition-timing-function: ease;
-                width: 100%;
-
-                @media (max-width: 575px) {
-                    width: 100%;
-                }
-
-                &:focus {
-                    box-shadow: 0 5px 0 0 var(--secondary);
-                    border-color: var(--secondary);
-                    outline: none;
-                }
-            }
-
-            &__label {
-                
-                @apply text-2xl font-bold;
-            }
-
-            &__textarea {
-                @apply text-2xl font-normal;
-                background-color: transparent;
-                border-bottom: 1px solid var(--outline);
-                // border: none;
-                height: 100%;
-                // font-size: 1.05rem;
-                width: 100%;
-
-                &:focus {
-                    outline: none;
-                }
-
-                @media (max-width: 575px) {
-                    width: 100%;
-                }
-            }
-
-            &__error {
-                font-style: italic;
-                margin-top: 0.5rem;
-                min-height: 1.2rem;
-                padding-right: 10px;
-                text-align: left;
-            }
-
-            button {
-                font-size: 1.6rem;
-                // margin-left: 2.5rem;
-                margin-top: 0;
-                position: relative;
-
-                @media (max-width: 450px) {
-                    margin: auto;
-                }
-            }
         }
     }
 
-    .success-modal {
-        background-color: white;
-        left: 0;
-        min-height: 100vh;
-        position: fixed;
-        top: 0;
-        width: 100vw;
-        z-index: 100;
+    &__left {
+        padding: 10px 0 10px 2.5rem;
+
+        @media (max-width: 575px) {
+            margin-left: 2.5rem;
+            padding: 10px 0 10px 0;
+        }
+
+        @media (max-width: 450px) {
+            margin-left: 0;
+        }
     }
+
+    &__right {
+        background-color: var(--secondary);
+        padding: 10px;
+        transition: background-color 1s ease;
+
+        @media (max-width: 575px) {
+            margin-bottom: 3rem;
+            margin-left: 2.5rem;
+        }
+
+        @media (max-width: 450px) {
+            margin-left: 0;
+        }
+
+        &--blue {
+            background-color: var(--primary);
+        }
+    }
+
+    &__group {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+
+        &--height {
+            height: 100%;
+        }
+    }
+
+    &__input {
+        @apply text-lg font-normal;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid var(--outline);
+        box-shadow: none;
+        box-shadow: 0 0 0 0 var(--secondary);
+        // font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+        transition-property: box-shadow, border;
+        transition-duration: 0.5s;
+        transition-timing-function: ease;
+        width: 100%;
+
+        @media (max-width: 575px) {
+            width: 100%;
+        }
+
+        &:focus {
+            box-shadow: 0 5px 0 0 var(--secondary);
+            border-color: var(--secondary);
+            outline: none;
+        }
+    }
+
+    &__label {
+        
+        @apply text-lg font-bold;
+    }
+
+    &__textarea {
+        @apply text-lg font-normal;
+        background-color: transparent;
+        border-bottom: 1px solid var(--outline);
+        // border: none;
+        height: 100%;
+        // font-size: 1.05rem;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        @media (max-width: 575px) {
+            width: 100%;
+        }
+    }
+
+    &__error {
+        font-style: italic;
+        margin-top: 0.5rem;
+        min-height: 1.2rem;
+        padding-right: 10px;
+        text-align: left;
+    }
+
+    button {
+        font-size: 1.6rem;
+        // margin-left: 2.5rem;
+        margin-top: 0;
+        position: relative;
+
+        @media (max-width: 450px) {
+            margin: auto;
+        }
+    }
+}
 </style>
 
 <script>
-// import axios from 'axios'
 import Subtitle from './subtitle'
 /* jshint esversion: 6 */
 export default {
@@ -188,11 +171,6 @@ export default {
   components: {
     Subtitle
   },
-
-  props: {
-
-  },
-
   data () {
     return {
       focus: false,
@@ -206,11 +184,6 @@ export default {
       success: false
     }
   },
-
-  computed: {
-
-  },
-
   methods: {
     focusToggle () {
       if (this.focus === true) {
@@ -249,26 +222,6 @@ export default {
 
       this.validEmail()
       this.validateForm()
-
-      const vm = this
-
-      // if (this.errors.length === 0) {
-      //   return axios.post('/api/contact', {
-      //     name: this.name,
-      //     email: this.email,
-      //     message: this.message
-      //   }).then(function (response) {
-      //     vm.$router.push({
-      //       path: '/sent'
-      //     })
-      //   }).catch((error) => {
-      //     this.errors = error.response.data.errors
-      //   })
-      // }
-      // else {
-      //   console.log(this.errors)
-      //   console.log('no')
-      // }
     }
 
   }

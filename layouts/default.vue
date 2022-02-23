@@ -2,7 +2,7 @@
   <div class="relative font-body min-h-screen w-full ">
     <canvas class="fixed -z-10" id="canvas"></canvas>
     <NavMenu />
-    <div class="mx-auto px-8 pt-32 lg:pt-16">
+    <div class="overflow-hidden mx-auto px-4 sm:px-8 pt-32 lg:pt-32">
       <nuxt/>
     </div>
     <Themes />
@@ -90,7 +90,9 @@ export default {
    
       // Style it up
   //     ctx.fillStyle = `hsla(${this.hue}, 100%, 50%, 1)`;
-      ctx.fillStyle = `hsla(164, 0%, 80%, 1)`;
+
+        ctx.fillStyle = `hsla(164, 0%, 80%, 1)`;
+
 
       ctx.fill();
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="subtitle mb-8 relative" :class="{ 'mt-28 mb-20': margin }">   
+    <div class="mb-8 w-fit relative font-display" :class="{ 'mt-28 mb-20': margin }">   
         <div
             class="absolute top-1/2 h-[42%] w-[104%] -z-10"
             :class="{

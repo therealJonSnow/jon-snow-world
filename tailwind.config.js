@@ -10,13 +10,21 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'display': ['Cutive Mono', 'sans-serif'],
-      'body': ['Cutive Mono', 'sans-serif']
+      'display': ['Permanent Marker', 'sans-serif'],
+      'body': ['Open Sans', 'sans-serif']
     },
     colors: {
+      'current': 'currentColor',
+      'type': "var(--type)",
       'primary': "var(--primary)",
       'secondary': "var(--secondary)",
-      'transparent': 'rgba(0, 0, 0, 0)'
+      'background': 'var(--bg)',
+      'alt-type': "var(--alt-type)",
+      'alt-primary': "var(--alt-primary)",
+      'alt-secondary': "var(--alt-secondary)",
+      'alt-type': "var(--alt-type)",
+      'transparent': 'rgba(0, 0, 0, 0)',
+      'alt-background': 'var(--alt-bg)'
     },
     extend: {
       boxShadow: {

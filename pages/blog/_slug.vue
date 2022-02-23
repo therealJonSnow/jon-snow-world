@@ -1,11 +1,13 @@
 <template>
   <div class="page">
     <Banner>
-      <template slot="title">{{post.title}}</template>
+      <template slot="title">
+        <span class="span-highlight">{{post.title}}</span>
+      </template>
     </Banner>
     <nuxt-content
       :document="post"
-      class="mx-0 mb-36 prose lg:prose-lg xl:prose-2xl mx-auto"
+      class=" mb-36 prose lg:prose-lg xl:prose-2xl mx-auto"
     />
     
     <!-- <div>{{ post.title }}</div> -->

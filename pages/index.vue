@@ -6,27 +6,21 @@
     /> -->
     <Banner>
       <template slot="title">
-        Hi_I'm_<span class="span-highlight">Jonny.</span><img src="../assets/images/face.png" style="transform: rotate(20deg)" class="inline w-48 -ml-16 rotate-[20deg] drop-shadow-sm"/>
+        Hi_I'm_<span class="span-highlight block sm:inline">Jonny.</span>
+        <span class="hidden sm:inline-block spacer w-0 sm:w-24 lg:w-32"></span>
+        <img src="../assets/images/face.png" class="absolute top-1/2 left-full w-32 lg:w-48 -translate-y-1/2 -translate-x-1/2 sm:-translate-x-full rotate-[20deg] drop-shadow-sm"/>
       </template>
       <template slot="subtitle-top">
         A front-end web developer who likes making things
       </template>
     </Banner>
-    <div class="container">
-      <div class="blog-grid">
-        <Card
-          v-for="post in posts"
-          :key="post.title"
-          :post="post"
-        />
-      </div>
+    <div class="blog-grid">
+      <Card
+        v-for="post in posts"
+        :key="post.title"
+        :post="post"
+      />
     </div>
-    <!-- <a :href="`/blog/${post.slug}`" v-for="post in posts" :key="post.title">
-      <h2 class="mt-2 text-3xl font-semibold">
-        {{ post.title }}
-      </h2>
-      <nuxt-content :document="{ body: post.excerpt }" />
-    </a> -->
   </div>
 </template>
 

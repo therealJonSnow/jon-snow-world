@@ -1,54 +1,61 @@
 <template>
-	<div class="themes__container">
-        <div @click="showPrimary = !showPrimary" class="theme__icon">
+	<div class="z-50 fixed top-16 right-0 lg:px-8 py-3 px-4 bg-secondary shadow-sm">
+        <img @click="showPrimary = !showPrimary" class="cursor-pointer w-5 h-5 mt-0.5" src="../assets/images/palette-solid.svg"/>
+        <!-- <div  class="theme__icon">
             <div class="icon__section" :style="{ 'background-color': colors[0] }"></div>
             <div class="icon__section" :style="{ 'background-color': colors[1] }"></div>
             <div class="icon__section" :style="{ 'background-color': colors[2] }"></div>
             <div class="icon__section" :style="{ 'background-color': colors[3] }"></div>
+        </div> -->
+        <div class="flex flex-col justify-center items-center">
+          <div
+            v-for="(color) in colors"
+            :key="color"
+            :class="{
+                active: showPrimary,
+                'pointer-events-none': !showPrimary
+            }"
+            :style="{ 'background-color': color }"
+            @click="colorPrimary(); showPrimary = !showPrimary; showSecondary = !showSecondary;"
+            class="theme__item shadow-sm"
+          ></div>
         </div>
-        <div class="themes">
-          <div @click="colorPrimary(); showPrimary = !showPrimary; showSecondary = !showSecondary;" class="theme__item" :class="{ active: showPrimary }" v-for="(color, index) in colors" :key="color" :style="{ 'background-color': color }"></div>  
-        </div>
-        <div class="themes">
-          <div @click="colorSecondary(); showSecondary = !showSecondary;" class="theme__item" :class="{ active: showSecondary }" v-for="(color, index) in colors" :key="color" :style="{ 'background-color': color }"></div>  
+        <div class="themes flex flex-col">
+          <div
+            v-for="(color) in colors"
+            :key="color"
+            :class="{
+                active: showSecondary,
+                'pointer-events-none': !showSecondary
+            }"
+            :style="{ 'background-color': color }"
+            @click="colorSecondary(); showSecondary = !showSecondary;"
+            class="theme__item shadow-sm"
+          ></div>
         </div>
 	</div>
 
 </template>
 
 <style lang="scss" scoped>
-.themes__container {
-    bottom: 2rem;
-    position: fixed;
-    right: 2.5rem;
-    z-index: 20;
+    .theme__item {
+        border-radius: 50%;
+        cursor: pointer;
+        height: 1rem;
+        margin: -0.5rem 0;
+        opacity: 0;
+        transition: margin 0.5s ease, opacity 0.5s ease;
+        width: 1rem;
 
-    .themes {
-        display: flex;
-        flex-direction: column;
-
-        .theme__item {
-            border-radius: 50%;
-            cursor: pointer;
-            height: 1rem;
-            margin: -0.5rem 0;
-            opacity: 0;
-            transition: margin 0.5s ease, opacity 0.5s ease;
-            width: 1rem;
-
-            &.active {
-                margin: 0.5rem 0;
-                opacity: 1;
-            }
+        &:first-of-type.active {
+            margin-top: 1rem
         }
 
-        div:last-of-type {
-            &.active {
-                margin-bottom: 1.5rem;
-            }
+        &.active {
+            margin: 0.5rem 0;
+            opacity: 1;
         }
     }
-
     .theme__icon {
         border-radius: 50%;
         display: flex;
@@ -62,7 +69,6 @@
             width: 50%;
         }
     }
-}
 </style>
 
 <script>
