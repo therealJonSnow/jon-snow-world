@@ -161,6 +161,21 @@
         }
     }
   }
+
+  .prose pre {
+    @apply shadow-sm;
+    color: var(--type) !important;
+    background-color: var(--secondary) !important;
+  }
+  .prose code {
+    @apply rounded-sm;
+    text-shadow: none;
+    background-color: var(--secondary) !important;
+  }
+
+  p code {
+    @apply shadow-sm p-1;
+  }
 }
 
 @layer components {

@@ -1,14 +1,22 @@
 <template>
-  <div class="page">
-    <!-- <component
+  <div class="page h-full">
+    <component
       :is="dropper"
       ref="dropper"
-    /> -->
+    />
     <Banner>
       <template slot="title">
         Hi_I'm_<span class="span-highlight block sm:inline">Jonny.</span>
         <span class="hidden sm:inline-block spacer w-0 sm:w-24 lg:w-32"></span>
-        <img src="../assets/images/face.png" class="absolute top-1/2 left-full w-32 lg:w-48 -translate-y-1/2 -translate-x-1/2 sm:-translate-x-full rotate-[20deg] drop-shadow-sm"/>
+        <div class="absolute top-1/2 left-full w-32 lg:w-48 transition-transform duration-500 hover:scale-110 -translate-y-1/2 -translate-x-1/2 sm:-translate-x-full rotate-[-20deg] drop-shadow-sm">
+          <img
+            :style="'transform: rotate(' + headRotation + 'deg)'"
+            id="main-head"
+            class="cursor-pointer"
+            ref="head"
+            src="../assets/images/face.png"
+          />
+        </div>
       </template>
       <template slot="subtitle-top">
         A front-end web developer who likes making things
@@ -33,8 +41,8 @@ export default {
   components: {
     Banner,
     Card,
-    // Dropper: () => import('../components/dropper.vue')
-  },
+    Dropper: () => import('../components/dropper.vue')
+},
   async asyncData ({ $content }) {
     const posts = await $content('blogs')
       .sortBy('createdAt', 'desc')
@@ -48,15 +56,21 @@ export default {
     return {
       dropper: '',
       images: '',
-      title: 'Jonny Snow - Bristol Based Front End Web Developer'
+      title: 'Jonny Snow - Bristol Based Front End Web Developer',
+      headRotation: 0
     }
   },
   mounted () {
-    // this.$nextTick(function () {
-    //   this.dropper = 'Dropper'
-    // })
+    this.$nextTick(() => {
+      this.dropper = 'Dropper'
+    })
+    document.addEventListener('mousemove',  this.updateHeadPosition)
   },
   methods: {
+    updateHeadPosition (e) {
+      console.log(e.x)
+      this.headRotation = ((e.screenX / window.innerWidth) + 0.5) * -45
+    },
     closeModal (event) {
       const modal = document.getElementById('photo-modal')
       modal.classList.remove('visible')

@@ -1,7 +1,7 @@
 ---
-title: Second Post
-description: What's going on with me and life and the house and more text and wooo.
-category: Life
+title: Big ol' Markdown Test File
+description: My markdown file for testing all elements for styling.
+category: Scrap
 ---
 # Hello
 *   [Overview](#overview)

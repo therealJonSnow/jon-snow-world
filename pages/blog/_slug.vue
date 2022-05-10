@@ -9,8 +9,6 @@
       :document="post"
       class=" mb-36 prose lg:prose-lg xl:prose-2xl mx-auto"
     />
-    
-    <!-- <div>{{ post.title }}</div> -->
   </div>
 </template>
 <script>
@@ -26,9 +24,7 @@ export default {
   props: {
   },
   async asyncData ({ $content, params }) {
-    console.log(params.slug)
     const post = await $content('blogs', params.slug).fetch()
-    console.log(post)
     return { post } 
   },
   head() {

@@ -1,4 +1,5 @@
 import { resolve } from 'path'
+const hljs = require('highlight.js');
 import tailwindTypography from '@tailwindcss/typography'
 export default {
   target: 'static',
@@ -6,9 +7,7 @@ export default {
   generate: {
     fallback: true
   },
-  /*
-  ** Headers of the page
-  */
+
   head: {
     title: 'Jonny Snow',
     htmlAttrs: {
@@ -26,14 +25,13 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Permanent+Marker&display=swap' }
     ]
   },
+
   loading: false,
-  /*
-  ** Global CSS
-  */
-  css: ['~/assets/scss/tailwind.scss'],
-  /*
-  ** Plugins to load before mounting the App
-  */
+
+  css: [
+    '~/assets/scss/tailwind.scss'
+  ],
+
   plugins: [
     {
       src: '~plugins/global'
@@ -50,8 +48,6 @@ export default {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
 
-  serverMiddleware: [
-  ],
   /*
   ** Nuxt.js dev-modules
   */
@@ -64,38 +60,16 @@ export default {
   modules: [
     '@nuxtjs/google-analytics',
     '@nuxtjs/style-resources',
-    '@nuxtjs/markdownit',
     '@nuxt/content',
-    'nuxt-purgecss',
-    ['nuxt-fontawesome', {
-      component: 'fa',
-      imports: [
-        // import whole set
-        {
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['faPlus', 'faMinus']
-        },
-        {
-          set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faInstagram', 'faDribbble', 'faLinkedin']
-        }
-      ]
-    }]
+    'nuxt-purgecss'
   ],
 
-  markdownit: {
-    preset: 'default',
-    linkify: true,
-    breaks: true,
-    injected: true,
-    html: true
-  },
-
-  styleResources: {
-    // your settings here
-    // scss: [
-    //   '~/assets/scss/*.scss'
-    // ]
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
+    }
   },
 
   pageTransition: {
@@ -103,11 +77,6 @@ export default {
     mode: 'out-in'
   },
 
-  env: {
-  },
-  /*
-  ** Build configuration
-  */
   build: {
     extractCSS: true,
     postcss: {

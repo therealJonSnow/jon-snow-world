@@ -2,7 +2,7 @@
   <div class="relative font-body min-h-screen w-full ">
     <canvas class="fixed -z-10" id="canvas"></canvas>
     <NavMenu />
-    <div class="overflow-hidden mx-auto px-4 sm:px-8 pt-32 lg:pt-32">
+    <div class="overflow-hidden h-full mx-auto px-4 sm:px-8 pt-32 lg:pt-32">
       <nuxt/>
     </div>
     <Themes />

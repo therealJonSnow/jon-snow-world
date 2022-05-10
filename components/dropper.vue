@@ -112,9 +112,10 @@ export default {
         strokeStyle: 'grey',
         strokeWidth: '5px',
         sprite: {
-          texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
-          xScale: 1,
-          yScale: 1
+          // texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
+          texture: require(`~/assets/images/face.png`),
+          xScale: 0.05,
+          yScale: 0.05
         }
 
       }
@@ -148,9 +149,9 @@ export default {
 
     let n
     if (window.innerWidth < 700) {
-      n = 4
+      n = 7
     } else {
-      n = 10
+      n = 20
     }
 
     let i
@@ -162,9 +163,10 @@ export default {
         const faceNew = Bodies.fromVertices(x, y, path, {
           render: {
             sprite: {
-              texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
-              xScale: 1,
-              yScale: 1
+              // texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
+              texture: require(`~/assets/images/face.png`),
+              xScale: 0.05,
+              yScale: 0.05
             }
 
           }
@@ -174,15 +176,16 @@ export default {
       }, timer)
     }
 
-    dropper.addEventListener('click', function () {
+    document.getElementById('main-head').addEventListener('click', function () {
       const x = event.clientX
       const y = event.clientY
       const faceClick = Bodies.fromVertices(x, y, path, {
         render: {
           sprite: {
-            texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
-            xScale: 1,
-            yScale: 1
+            // texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
+            texture: require(`~/assets/images/face.png`),
+            xScale: 0.05,
+            yScale: 0.05
           }
         }
       })
