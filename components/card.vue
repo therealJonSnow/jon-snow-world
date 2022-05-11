@@ -1,6 +1,6 @@
 <template>
   <nuxt-link class="block" :to="`/blog/${ post.slug }`">
-    <div class="relative px-6 py-10 bg-secondary text-5xl mb-3 md:mb-6">
+    <div class="relative px-6 py-10 bg-secondary shadow-sm text-5xl mb-3 md:mb-6">
       <span v-if="post.category" class="z-10 absolute text-2xl right-6 top-4 font-display">{ {{ post.category }} }</span>
       <div class="font-display mb-4">{{ post.title }}</div>
       <div class="text-xl">{{ post.description }}</div>
