@@ -8,7 +8,7 @@
     </Banner>
     <div class="prose lg:prose-lg xl:prose-2xl mx-auto">
       <p>
-        Hi there! I'm Jonny, a <span class="span-highlight">Creative Front-end Developer</span> and creative based out of Bristol, UK.
+        Hi there! I'm Jonny, a <span class="span-highlight">Front-end Developer</span> and creative based out of Bristol, UK.
       </p>
       <p>
         In my spare time I like making <span class="span-highlight">things.</span> Creating or developing my skills to bring ideas to life. Adding those extra touches that make peoples heads turn and take notice.
@@ -45,8 +45,7 @@
           <li>Strong HTML, CSS and JavaScript</li>
           <li>Experience with Vue, Nuxt.js and Laravel</li>
           <li>A love of css animations and ui transitions</li>
-          <li>Comfortable with MODX and Directus CMS</li>
-          <li>Knowledge of Git and Sourcetree</li>
+          <li>Knowledge of Git, GitFlow, CI & CD</li>
           <li>MEng in Marine Engineering from Southampton University</li>
       </ul>
       <Contact />

@@ -56,6 +56,12 @@ export default {
       }
     })
 
+    console.log(render)
+    // const ctx = canvas.getContext('2d')
+    render.context.shadowOffsetX = 1;
+    render.context.shadowOffsetY = 1;
+    render.context.shadowBlur = 2;
+    render.context.shadowColor = "rgba(166, 166, 166, 1)";
     const ground = Bodies.rectangle(halfWidth, height, width, 10, {
       render: {
         fillStyle: 'transparent'
@@ -113,9 +119,9 @@ export default {
         strokeWidth: '5px',
         sprite: {
           // texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
-          texture: require(`~/assets/images/face.png`),
-          xScale: 0.05,
-          yScale: 0.05
+          texture: require(`~/assets/images/Outline_Face.svg`),
+          xScale: 3,
+          yScale: 3
         }
 
       }
@@ -155,7 +161,7 @@ export default {
     }
 
     let i
-    for (i = 0; i < n; i++) {
+    for (i = 1; i < n; i++) {
       const timer = 2000 + Math.random() * 2000
       setTimeout(function () {
         const x = Math.random() * width
@@ -164,9 +170,9 @@ export default {
           render: {
             sprite: {
               // texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
-              texture: require(`~/assets/images/face.png`),
-              xScale: 0.05,
-              yScale: 0.05
+              texture: require(`~/assets/images/Outline_Face.svg`),
+              xScale: 3,
+              yScale: 3
             }
 
           }
@@ -183,9 +189,9 @@ export default {
         render: {
           sprite: {
             // texture: 'https://its-jonny.s3.amazonaws.com/zzz__Profile_Crop.png',
-            texture: require(`~/assets/images/face.png`),
-            xScale: 0.05,
-            yScale: 0.05
+            texture: require(`~/assets/images/Outline_Face.svg`),
+            xScale: 3,
+            yScale: 3
           }
         }
       })

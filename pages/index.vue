@@ -8,13 +8,13 @@
       <template slot="title">
         Hi_I'm_<span class="span-highlight block sm:inline">Jonny.</span>
         <span class="hidden sm:inline-block spacer w-0 sm:w-24 lg:w-32"></span>
-        <div class="absolute top-1/2 left-full w-32 lg:w-48 transition-transform duration-500 hover:scale-110 -translate-y-1/2 -translate-x-1/2 sm:-translate-x-full rotate-[-20deg] drop-shadow-sm">
+        <div class="absolute top-1/2 -right-1/3 w-32 lg:w-48 transition-transform duration-500 hover:scale-110 -translate-y-1/2 -translate-x-1/2 sm:-translate-x-full rotate-[-10deg] drop-shadow-sm">
           <img
-            :style="'transform: rotate(' + headRotation + 'deg)'"
+            :style="'transform: rotate(' + headRotation + 'deg) scale(3)'"
             id="main-head"
             class="cursor-pointer"
             ref="head"
-            src="../assets/images/face.png"
+            src="../assets/images/Outline_Face.svg"
           />
         </div>
       </template>
