@@ -16,6 +16,7 @@
             ref="head"
             src="../assets/images/Outline_Face.svg"
           />
+          <img class="hidden" src="../assets/images/codepen-image.png" alt="">
         </div>
       </template>
       <template slot="subtitle-top">
