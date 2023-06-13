@@ -21,6 +21,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
     "matter-js": "^0.14.2",
+    "netlify-cms": "^2.10.192",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-purgecss": "^1.0.0",
