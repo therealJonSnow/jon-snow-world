@@ -45,6 +45,11 @@ export default {
     Card,
     Dropper: () => import('../components/dropper.vue')
 },
+head() {
+    return {
+      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+    };
+  },
   async asyncData ({ $content }) {
     const posts = await $content('blogs')
       .sortBy('createdAt', 'desc')
